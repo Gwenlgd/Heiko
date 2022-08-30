@@ -1,0 +1,2 @@
+class ReportMoodsController < ApplicationController
+end

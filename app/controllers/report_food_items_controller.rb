@@ -1,0 +1,2 @@
+class ReportFoodItemsController < ApplicationController
+end

@@ -3,15 +3,17 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+#   food_items = food_item.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", food_item: food_items.first)
 require "open-uri"
+require "csv"
+
 
 puts "Cleaning database..."
-Rental.destroy_all
-
-
+Feeling.destroy_all
+Mood.destroy_all
 User.destroy_all
+FoodItem.destroy_all
 
 puts "Creating users..."
 
@@ -73,3 +75,13 @@ Mood.create!(name: "Super happy")
 Mood.create!(name: "Happy")
 Mood.create!(name: "Sad")
 Mood.create!(name: "Angry")
+
+# FOOD ITEMS
+puts "Creating food items..."
+
+filepath = "db/data/ingredients.csv"
+
+CSV.foreach(filepath, headers: :first_row) do |row|
+  FoodItem.create!(name: row['ingredients'], id: row['id'])
+  puts "#{row['ingredients']} #{row['id']}"
+end

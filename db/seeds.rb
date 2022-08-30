@@ -15,6 +15,8 @@ User.destroy_all
 
 puts "Creating users..."
 
+# USERS
+
 # women
 gaby = User.create!(first_name: "Gaby", last_name: "vDB", email: "gvdb@test.com", password: "paradise", age: 29, gender: "Women")
 juliette = User.create!(first_name: "Juliette", last_name: "B.", email: "juliette@test.com", password: "paradise", age: 29, gender: "Women")
@@ -31,4 +33,43 @@ grant = User.create!(first_name: "Grant", last_name: "N.", email: "grantn@test.c
 eric = User.create!(first_name: "Eric", last_name: "J.", email: "ericj@test.com", password: "paradise", age: 29, gender: "Men")
 viktor = User.create!(first_name: "eric", last_name: "F.", email: "viktorf@test.com", password: "paradise", age: 29, gender: "Men")
 alex = User.create!(first_name: "Alex", last_name: "R.", email: "alexr@test.com", password: "paradise", age: 29, gender: "Men")
-puts "Creating listings..."
+
+
+puts "Creating feelings..."
+
+# FEELINGS
+
+# energy
+Feeling.create!(name: "Invigorated", category: "Energy")
+Feeling.create!(name: "Full of energy", category: "Energy")
+Feeling.create!(name: "Tired", category: "Energy")
+Feeling.create!(name: "No energy", category: "Energy")
+
+# gut
+Feeling.create!(name: "Bloating", category: "Digestion")
+Feeling.create!(name: "Stomach pain", category: "Digestion")
+Feeling.create!(name: "Gas", category: "Digestion")
+Feeling.create!(name: "Diarrhea", category: "Digestion")
+Feeling.create!(name: "Constipation", category: "Digestion")
+Feeling.create!(name: "Nausea", category: "Digestion")
+Feeling.create!(name: "Vomiting", category: "Digestion")
+
+
+# skin
+Feeling.create!(name: "Pimples", category: "Skin")
+Feeling.create!(name: "Eczema", category: "Skin")
+
+
+# body
+Feeling.create!(name: "Headache", category: "Body")
+Feeling.create!(name: "Hayfever", category: "Body")
+Feeling.create!(name: "Asthma", category: "Body")
+
+
+puts "Creating moods..."
+
+# MOODS
+Mood.create!(name: "Super happy")
+Mood.create!(name: "Happy")
+Mood.create!(name: "Sad")
+Mood.create!(name: "Angry")

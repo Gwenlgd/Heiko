@@ -16,3 +16,21 @@ Rental.destroy_all
 User.destroy_all
 
 puts "Creating users..."
+
+# women
+gaby = User.create!(first_name: "Gaby", last_name: "vDB", email: "gvdb@test.com", password: "paradise", age: 29, gender: "Women")
+juliette = User.create!(first_name: "Juliette", last_name: "B.", email: "juliette@test.com", password: "paradise", age: 29, gender: "Women")
+gwen = User.create!(first_name: "Gwen", last_name: "L.", email: "gwenl@test.com", password: "paradise", age: 29, gender: "Women")
+april = User.create!(first_name: "April", last_name: "D.", email: "aprild@test.com", password: "paradise", age: 29, gender: "Women")
+silvia = User.create!(first_name: "Silvia", last_name: "P.", email: "silviap@test.com", password: "paradise", age: 29, gender: "Women")
+bodil = User.create!(first_name: "Bodil", last_name: "E.", email: "bodile@test.com", password: "paradise", age: 29, gender: "Women")
+franka = User.create!(first_name: "Franka", last_name: "S.", email: "franka@test.com", password: "paradise", age: 29, gender: "Women")
+
+#men
+gabriel = User.create!(first_name: "Gabriel", last_name: "C.", email: "gabrielc@test.com", password: "paradise", age: 29, gender: "Men")
+jules = User.create!(first_name: "Jules", last_name: "D.", email: "julesd@test.com", password: "paradise", age: 29, gender: "Men")
+grant = User.create!(first_name: "Grant", last_name: "N.", email: "grantn@test.com", password: "paradise", age: 29, gender: "Men")
+eric = User.create!(first_name: "Eric", last_name: "J.", email: "ericj@test.com", password: "paradise", age: 29, gender: "Men")
+viktor = User.create!(first_name: "eric", last_name: "F.", email: "viktorf@test.com", password: "paradise", age: 29, gender: "Men")
+alex = User.create!(first_name: "Alex", last_name: "R.", email: "alexr@test.com", password: "paradise", age: 29, gender: "Men")
+puts "Creating listings..."

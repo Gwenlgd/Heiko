@@ -48,33 +48,32 @@ Feeling.create!(name: "Tired", category: "Energy")
 Feeling.create!(name: "No energy", category: "Energy")
 
 # gut
-Feeling.create!(name: "Bloating", category: "Digestion")
-Feeling.create!(name: "Stomach pain", category: "Digestion")
-Feeling.create!(name: "Gas", category: "Digestion")
-Feeling.create!(name: "Diarrhea", category: "Digestion")
+Feeling.create!(name: "Bloating", category: "Digestion") # ok ??
+Feeling.create!(name: "Stomach pain", category: "Digestion") # ok
+Feeling.create!(name: "Gas", category: "Digestion") # ok
+Feeling.create!(name: "Diarrhea", category: "Digestion") # ok
 Feeling.create!(name: "Constipation", category: "Digestion")
-Feeling.create!(name: "Nausea", category: "Digestion")
-Feeling.create!(name: "Vomiting", category: "Digestion")
+Feeling.create!(name: "Nausea", category: "Digestion") # ok
 
 
 # skin
-Feeling.create!(name: "Pimples", category: "Skin")
-Feeling.create!(name: "Eczema", category: "Skin")
+Feeling.create!(name: "Pimples", category: "Skin") # ok
+Feeling.create!(name: "Eczema", category: "Skin") # ok
 
-
+a
 # body
-Feeling.create!(name: "Headache", category: "Body")
+Feeling.create!(name: "Headache", category: "Body") # ok
 Feeling.create!(name: "Hayfever", category: "Body")
-Feeling.create!(name: "Asthma", category: "Body")
+Feeling.create!(name: "Asthma", category: "Body") # ok
 
 
 puts "Creating moods..."
 
 # MOODS
 Mood.create!(name: "Super happy")
-Mood.create!(name: "Happy")
-Mood.create!(name: "Sad")
-Mood.create!(name: "Angry")
+Mood.create!(name: "Happy") # ok
+Mood.create!(name: "Sad") # ok
+Mood.create!(name: "Angry") # ok
 
 # RECIPES
 

@@ -1,6 +1,39 @@
-// TWO BUTTONS (PRIMARY & SECONDARY
+// TWO BUTTONS (PRIMARY & SECONDARY)
 
-// .btn-primary
+.btn-primary {
+position: relative;
+width: 135px;
+height: 60px;
+background-color: $green;
+text-align: center;
+border-radius: 8px;
+border-color: $green;
+color: $white;
+box-shadow: none;
+}
 
+.btn-primary:hover {
+  background-color: $white;
+  transition-duration: 0.5s;
+  border-color: $green;
+  color: $green;
+}
 
-// .btn-secondary
+.btn-secondary {
+position: relative;
+width: 135px;
+height: 60px;
+background-color: $white;
+text-align: center;
+border-radius: 8px;
+border-color: $green;
+color: $green;
+box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-color: $green;
+  transition-duration: 0.5s;
+  border-color: $white;
+  color: $white;
+}

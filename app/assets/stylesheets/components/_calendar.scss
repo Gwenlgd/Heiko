@@ -5,3 +5,60 @@
 
 
 // .calendar-month
+
+.simple-calendar {
+  padding: 15px;
+  table {
+    min-height: 200px;
+
+  }
+  .today {
+    background-color: #FAF3DD;
+  }
+}
+
+.simple-calendar a {
+  text-decoration: none;
+  color: $green;
+
+}
+
+.calendar-title {
+  color: $black;
+}
+
+.simple-calendar .today {
+  background-color: $green;
+  opacity: 0.75;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.meeting {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.table > thead {
+  display: none;
+}

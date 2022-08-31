@@ -1,1 +1,94 @@
 // ALL THE ICON FOR THE NAVIGATION
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  }
+
+.dropup-content a {
+  text-decoration: none;
+  color: $black;
+}
+
+
+.footer {
+  position: absolute;
+  width: 390px;
+  height: 90px;
+  left: 0px;
+  top: 754px;
+}
+
+.dropup-button {
+position: absolute;
+left: 44.1%;
+right: 44.36%;
+top: 11.11%;
+bottom: 38.89%;
+
+background: url();
+opacity: 0.75;
+}
+
+
+
+
+/* Dropup Button */
+.dropbtn {
+  background-color: white;
+  color: $black;
+  font-size: 16px;
+  border: none;
+  transition-duration: 0.5s;
+
+  width: 100px;
+  opacity: 0.5;
+}
+
+.dropup:hover .dropbtn {
+  opacity: 0.9;
+  color: $black;
+  transition-duration: 0.5s;
+}
+
+/* The container <div> - needed to position the dropup content */
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropup content (Hidden by Default) */
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 375px;
+  bottom: 40px;
+  left: 30px;
+  font-size: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+  color: black;
+  padding: 15px 0px 15px 0px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {
+  transition-duration: 0.5s;
+  background-color: $black;
+  color: white;
+}
+
+/* Show the dropup menu on hover */
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+/* Change the background color of the dropup button when the dropup content is shown */

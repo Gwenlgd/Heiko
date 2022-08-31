@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/components', to: 'pages#components_gwen'
   get '/components1', to: 'pages#components_jules'
+  get '/calendar', to: 'pages#calendar'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

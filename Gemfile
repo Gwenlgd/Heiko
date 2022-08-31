@@ -77,4 +77,9 @@ group :test do
   gem "webdrivers"
 end
 
+# Calander
+gem "simple_calendar", "~> 2.4"
+
+  
+  
 gem 'inline_svg'

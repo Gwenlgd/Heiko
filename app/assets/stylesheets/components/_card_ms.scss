@@ -9,6 +9,7 @@ body {
 
   p{
     text-align: center;
+    color: black;
   }
 }
 .card-ms {
@@ -30,7 +31,7 @@ body {
     height: 100px;
 
     path {
-      fill: $offwhite;
+      fill: $green;
 
     }
   }

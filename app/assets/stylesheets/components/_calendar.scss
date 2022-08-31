@@ -7,13 +7,14 @@
 // .calendar-month
 
 .simple-calendar {
-  padding: 15px;
+  padding: 0px 15px;
+  border: none;
   table {
-    min-height: 200px;
-
+    min-height: 40px;
   }
   .today {
-    background-color: #FAF3DD;
+    background-color: $green;
+    border-radius: 5px;
   }
 }
 
@@ -23,15 +24,44 @@
 
 }
 
+.simple-calendar .day {
+  height: 30px;
+  color: #1B1E1D;
+  background-color: #BEDAD2;
+  opacity: 0.75;
+  border-radius: 5px;
+  border: none;
+  padding-left: 0px;
+  padding-top: 0px;
+  margin: 5px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: $green;
+  color: $black;
+  border-radius: 5px;
+  padding-left: 18px;
+  opacity: 0.75;
+}
+
 .calendar-title {
   color: $black;
 }
 
-.simple-calendar .today {
-  background-color: $green;
-  opacity: 0.75;
-  border-radius: 50px;
+.calendar-heading {
+  display: 0;
 }
+
+.head, tbody, tfoot, tr, td, th {
+  border-color: white;
+  border-style: hidden;
+  border-width: 0px;
+}
+
+*, *::before, *::after {
+  box-sizing: content-box;
+}
+
 
 
 

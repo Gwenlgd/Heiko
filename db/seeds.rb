@@ -76,6 +76,15 @@ Mood.create!(name: "Happy")
 Mood.create!(name: "Sad")
 Mood.create!(name: "Angry")
 
+# RECIPES
+
+Recipe.create!(name: "Pasta Carbonara")
+Recipe.create!(name: "Gado Gado")
+Recipe.create!(name: "Chicken cream")
+Recipe.create!(name: "Fried Rice")
+
+
+
 # FOOD ITEMS
 puts "Creating food items..."
 

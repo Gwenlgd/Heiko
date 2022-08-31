@@ -1,2 +1,3 @@
 class ReportFeelingsController < ApplicationController
+
 end

@@ -1,0 +1,99 @@
+// CALENDAR WEEK AND MONTHS
+
+
+// .calendar-week
+
+
+// .calendar-month
+
+.simple-calendar {
+  padding: 0px 5px;
+  border: none;
+  table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    table-layout: fixed;
+    border: none;
+  }
+  .today {
+    background-color: $green;
+    border-radius: 5px;
+  }
+}
+
+
+.simple-calendar .day {
+  height: 30px;
+  color: #1B1E1D;
+  background-color: $offwhite;
+  border-radius: 5px;
+  border: none;
+}
+
+
+.simple-calendar .today {
+  background-color: $green;
+  border-radius: 5px;
+}
+
+.simple-calendar .prev-month {
+  background: $white;
+  border: 1px solid $green;
+}
+
+.simple-calendar .next-month {
+  background: $white;
+  border: 1px solid $green;
+
+}
+
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: $green;
+  color: $black;
+}
+
+.calendar-title {
+  color: $black;
+  margin: 11px;
+}
+
+.week {
+  .calendar-heading {
+    display: none;
+  }
+}
+
+.head, tbody, tfoot, tr, td, th {
+  border-style: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: content-box;
+}
+
+.simple-calendar td {
+  vertical-align: middle;
+  width: auto;
+}
+
+td {
+  text-align: center;
+}
+
+
+.meeting {
+  color: white;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.table > thead {
+  display: none;
+}

@@ -3,6 +3,4 @@
 <% end %>
 
 
-<%= week_calendar(number_of_weeks: 1) do |date| %>
-  <%= date.strftime('%e') %>
-<% end %>
+<div class="calendar-week"><%= render "shared/calendar_week" %></div>

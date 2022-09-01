@@ -4,7 +4,9 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <h1>HEIKO</h1>
     <% end %>
-    <%= inline_svg_tag("person.svg", class:"navbar-icon" )  %>
+    <%= link_to settings_path do %>
+      <%= inline_svg_tag("person.svg", class:"navbar-icon" )  %>
+    <% end %>
     <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span> %>
     </button>

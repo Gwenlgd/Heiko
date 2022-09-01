@@ -2,13 +2,19 @@
 body {
   background-color: $white;
 }
-.category-digestion {
+
+  h2 {
+    text-align: center;
+    color: black;
+  }
+.category-ms {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-around;
 
-  p{
+  p {
     text-align: center;
+    color: black;
   }
 }
 .card-ms {
@@ -29,8 +35,8 @@ body {
     width: 100px;
     height: 100px;
 
-    path {
-      fill: $offwhite;
+    path, circle {
+      fill: $green;
 
     }
   }

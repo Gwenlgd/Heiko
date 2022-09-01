@@ -1,0 +1,41 @@
+
+.add-fooditem{
+  margin: 20px;
+
+}
+
+.form-select {
+  width: auto;
+}
+
+.btn-submit-report {
+  margin-top: 5px;
+  position: relative;
+  width: 105px;
+  height: 40px;
+  background-color: $green;
+  text-align: center;
+  border-radius: 8px;
+  border-color: $green;
+  color: $white;
+  box-shadow: none;
+}
+
+.btn-submit-report:hover {
+  background-color: $white;
+  transition-duration: 0.5s;
+  border-color: $green;
+  color: $green;
+}
+
+.recent-fooditem {
+
+  h3{
+    font-size: 26px;
+    margin-top: 30px;
+  }
+
+  .recent-fooditem-name {
+    margin-top: 10px;
+  }
+}

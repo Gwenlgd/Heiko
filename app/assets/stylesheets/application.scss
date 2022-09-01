@@ -12,8 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+
+// Tom Select for seach bar
+
+@import "tom-select/dist/css/tom-select.min.css";
+
 // Added by Jules
 @import "https://use.typekit.net/wss4ali.css";
+
 .h1-h3 {
   font-weight: 300;
 }

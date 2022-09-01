@@ -6,6 +6,50 @@ class ReportsController < ApplicationController
   end
 
   def show
+    @report_moods = @report.report_moods
+    @report_feelings = @report.report_feelings
+    @report_food_items = @report.report_food_items
+  end
+
+
+
+  def create
+    @report = Report.new(user_id: current_user.id, date: Date.today)
+
+    if params[:category] == "Breakfast"
+      @report.meal_type = "Breakfast"
+      if @report.save
+        redirect_to new_report_report_food_item_path(@report)
+      end
+    elsif params[:category] == "Lunch"
+      @report.meal_type = "Lunch"
+      if @report.save
+        redirect_to new_report_report_food_item_path(@report)
+      end
+    elsif params[:category] == "Diner"
+      @report.meal_type = "Diner"
+      if @report.save
+        redirect_to new_report_report_food_item_path(@report)
+      end
+    elsif params[:category] == "Snacks"
+      @report.meal_type = "Snacks"
+      if @report.save
+        redirect_to new_report_report_food_item_path(@report)
+      end
+    elsif params[:category] == "Drinks"
+      @report.meal_type = "Drinks"
+      if @report.save
+        redirect_to new_report_report_food_item_path(@report)
+      end
+    elsif params[:category] == "Moods"
+      if @report.save
+        redirect_to new_report_report_mood_path(@report)
+      end
+    elsif params[:category] == "Symptoms"
+      if @report.save
+        redirect_to new_report_report_feeling_path(@report)
+      end
+    end
   end
 
   private

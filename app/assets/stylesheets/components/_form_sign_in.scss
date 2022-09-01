@@ -1,1 +1,29 @@
 // FOR SIGN IN AND SIGN UP PAGES
+//.form-inputs {
+  //margin-top: 30px;
+//}
+
+
+.content-container {
+  margin-top: 30px;
+}
+
+.form-container {
+  max-width: 1100px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  background-color: $offwhite;
+}
+
+.form-control{
+  margin-top: 30px;
+  margin-left: 14px;
+  padding: 5px;
+  border: 10px;
+  border-radius:5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}

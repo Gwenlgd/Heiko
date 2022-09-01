@@ -2,14 +2,15 @@
 
 .btn-primary {
 position: relative;
-width: 135px;
-height: 60px;
+width: 100px;
+height: 40px;
 background-color: $green;
 text-align: center;
-border-radius: 8px;
+border-radius: 5px;
 border-color: $green;
 color: $white;
 box-shadow: none;
+text-decoration: none !important;
 }
 
 .btn-primary:hover {
@@ -21,14 +22,15 @@ box-shadow: none;
 
 .btn-secondary {
 position: relative;
-width: 135px;
-height: 60px;
+width: 100px;
+height: 40px;
 background-color: $white;
 text-align: center;
-border-radius: 8px;
+border-radius: 5px;
 border-color: $green;
 color: $green;
 box-shadow: none;
+text-decoration: none !important;
 }
 
 .btn-secondary:hover {

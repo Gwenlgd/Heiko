@@ -1,16 +1,27 @@
 // TWO BUTTONS (PRIMARY & SECONDARY)
 
 .btn-primary {
-position: relative;
-width: 135px;
-height: 60px;
-background-color: $green;
-text-align: center;
-border-radius: 8px;
-border-color: $green;
-color: $white;
-box-shadow: none;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background-color: #BEDAD2;
+  text-align: center;
+  border-radius: 5px;
+  border-color: $green;
+  color: #FFFFFF;
+  box-shadow: none;
 }
+
+.btn-primary a {
+
+  color: $white;
+  text-decoration: none;
+}
+
+.btn-primary p {
+  margin-bottom: 0px;
+}
+
 
 .btn-primary:hover {
   background-color: $white;
@@ -21,14 +32,25 @@ box-shadow: none;
 
 .btn-secondary {
 position: relative;
-width: 135px;
-height: 60px;
+width: 100px;
+height: 40px;
 background-color: $white;
 text-align: center;
-border-radius: 8px;
+border-radius: 5px;
 border-color: $green;
 color: $green;
 box-shadow: none;
+}
+
+.btn-secondary a {
+
+  color: $green;
+  text-decoration: none;
+}
+
+.btn-secondary p {
+  margin-bottom: 0px;
+  color: $green;
 }
 
 .btn-secondary:hover {
@@ -36,4 +58,32 @@ box-shadow: none;
   transition-duration: 0.5s;
   border-color: $white;
   color: $white;
+}
+
+
+.btn-link {
+  position: relative;
+  width: 330px;
+  height: 30px;
+  background-color: white;
+  text-align: left;
+  border-radius: 0px;
+  border-color: $offwhite;
+  box-shadow: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.btn-link a {
+
+  color: $black;
+  text-decoration: none;
+}
+
+.btn-link p {
+  margin-bottom: 0px;
+  text-decoration: none;
+  margin-left: 18px;
 }

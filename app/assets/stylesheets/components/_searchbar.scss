@@ -1,38 +1,53 @@
 .search-form-control {
   position: relative;
+  color: $black;
 }
 
-.search-form-control .form-control {
+// .form-with
+.form-control {
   height: 45px;
   width: 360.08px;
   box-shadow: none;
   border: 1px solid $black;
+  position: absolute;
+  color: $black;
 }
 
-.search-form-control .form-control:focus {
+// .search-form-control
+
+.form-control:focus {
   border: 1px solid $black;
   outline: none !important;
   box-shadow: none;
   color: $black;
 }
 
-.search-container {
+.form-with {
   width: 360.08px;
   height: 45px;
   display: flex;
   background-color: $black;
   justify-content: space-around;
   height: 45px;
+  color: $black;
 }
 
-.input-icons {
-  width: 100%;
-  margin-bottom: 10px;
+.d-flex {
+  height: 45px;
+  width: 360.08px;
+  box-shadow: none;
+  // border: 1px solid $black;
+  position: absolute;
+  border-radius: 8px;
+  margin-left: 15px;
+  color: $black;
 }
 
-.icon {
-  padding: 10px;
-  color: green;
-  min-width: 50px;
-  text-align: center;
+.search-icon {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/54/54481.png);
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position-x: 8px;
+  background-position-y: 7px;
+  padding-left: 35px;
 }

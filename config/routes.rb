@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/calendar', to: 'pages#calendar'
   get '/dashboard', to: 'pages#dashboard'
   get '/settings', to: 'pages#settings'
+  # get '/new', to 'pages#new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

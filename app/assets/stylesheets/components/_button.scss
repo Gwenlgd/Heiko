@@ -1,15 +1,16 @@
 // TWO BUTTONS (PRIMARY & SECONDARY)
 
 .btn-primary {
-  position: relative;
-  width: 100px;
-  height: 40px;
-  background-color: #BEDAD2;
-  text-align: center;
-  border-radius: 5px;
-  border-color: $green;
-  color: #FFFFFF;
-  box-shadow: none;
+position: relative;
+width: 100px;
+height: 40px;
+background-color: $green;
+text-align: center;
+border-radius: 5px;
+border-color: $green;
+color: $white;
+box-shadow: none;
+text-decoration: none !important;
 }
 
 .btn-primary a {
@@ -21,7 +22,6 @@
 .btn-primary p {
   margin-bottom: 0px;
 }
-
 
 .btn-primary:hover {
   background-color: $white;
@@ -40,6 +40,7 @@ border-radius: 5px;
 border-color: $green;
 color: $green;
 box-shadow: none;
+text-decoration: none !important;
 }
 
 .btn-secondary a {

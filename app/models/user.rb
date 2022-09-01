@@ -5,6 +5,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reports
 
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :age, presence: true
+  validates :gender, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+  # validates :password_confirmation
+
+  #Validations to consider? - Jules
+  # validates :username, uniqueness: true
+  # validates :reset_password_token
+  # validates: reset_password_sent_at
+
+
 end

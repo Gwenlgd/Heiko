@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/components', to: 'pages#components_gwen'
   get '/components1', to: 'pages#components_jules'
   get '/calendar', to: 'pages#calendar'
-
+  get '/dashboard', to: 'pages#dashboard'
+  get '/settings', to: 'pages#settings'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

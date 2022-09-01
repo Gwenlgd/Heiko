@@ -1,0 +1,14 @@
+<h2>SETTINGS PAGE</h2>
+
+
+    <%= link_to new_user_session_path do %>
+    <p>Sign In / Log in</p>
+    <% end %>
+
+    <%= link_to new_user_registration_path do %>
+    <p>Sign Up</p>
+    <% end %>
+
+    <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+    <p>Log out</p>
+    <% end %>

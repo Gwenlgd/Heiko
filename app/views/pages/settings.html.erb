@@ -13,13 +13,16 @@
         <% end %>
       </button>
       <button class="btn btn-secondary">
-          <%= link_to edit_user_registration_path do %>
+          <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
           <p>Log out</p>
           <% end %>
        </button>
        </div>
   </div>
 <br>
+
+
+
 
 
 

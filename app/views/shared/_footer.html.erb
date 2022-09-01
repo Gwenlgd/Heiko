@@ -1,16 +1,14 @@
 <div class="footer">
-
-
   <%= link_to dashboard_path do %>
-  <%= image_tag "home_.png", class: "footer-item" %>
+    <%= inline_svg_tag("home.svg", class:"footer-icon")  %>
   <% end %>
 
   <%= link_to calendar_path do %>
-  <%= image_tag "calendar.png", class: "footer-item" %>
+  <%= inline_svg_tag "calendar.svg", class: "footer-icon" %>
   <% end %>
 
   <div class="dropup">
-    <button class="dropbtn"><%= image_tag "positive.png", class: "footer-item-plus" %></button>
+    <button class="dropbtn"><%= inline_svg_tag "positive.svg", class: "footer-icon-plus" %></button>
     <div class="dropup-content">
       <%= link_to "Breakfast", new_user_session_path%>
       <%= link_to "Lunch", new_user_session_path%>
@@ -25,13 +23,10 @@
   </div>
 
   <%= link_to new_user_session_path do %>
-  <%= image_tag "cardiogram.png", class: "footer-item" %>
+  <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
   <% end %>
 
-  <%= link_to new_user_session_path do %>
-  <%= image_tag "book.png", class: "footer-item" %>
+  <%= link_to settings_path do %>
+  <%= inline_svg_tag "person.svg", class: "footer-icon" %>
   <% end %>
-
-
-
 </div>

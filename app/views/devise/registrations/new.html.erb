@@ -1,3 +1,5 @@
+<div class="my-container">
+
 <h2>Sign up</h2>
 
 <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false } do |f| %>
@@ -39,9 +41,11 @@
                 placeholder: "password?",
                 input_html: { autocomplete: "password confirmation" } %>
   </div>
-
+<br>
   <div class="form-actions">
     <%= f.button :submit, "Sign up", class:"btn-primary" %>
+    <% end %>
   </div>
-<% end %>
+
+</div>
     <!--<%= link_to "Log in", new_session_path(resource_name), class: "btn-secondary" %>╌>

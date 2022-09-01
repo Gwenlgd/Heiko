@@ -1,6 +1,12 @@
-<h2>DASHBOARD PAGE</h2>
+<div class="my-container">
+  <div class="day-cal">
 
-    <%= link_to calendar_path do %>
-    <p>Circle for the calendar link</p>
-      <%# <%= inline_svg_tag("person.svg", class:"navbar-icon" )  %> %>
+    <%= calendar(number_of_days: 1) do |date| %>
+      <%= link_to calendar_path do %>
+      <%= date.strftime('%e') %>
+      <% end %>
     <% end %>
+  </div>
+  <h2 class="dashboard-content">Welcome Gwen,</h2>
+  <p id="p-dashboard-content">Have a great day today! One more day to kill and then it's weeekend. Whoop Whoop Uluwatu there you go! </p>
+</div>

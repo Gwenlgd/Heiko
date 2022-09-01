@@ -1,14 +1,56 @@
-<h2>SETTINGS PAGE</h2>
+<div class="my-container">
 
 
+  <div class="profile">
+    <%= image_tag 'user_profile.png', id: "profile-pic" %>
+    <br>
+    <h2>Gwen Legrand</h2>
+    <p>Gwenlg@test.com</p>
+    <div class="logout">
+      <button class="btn btn-primary">
+        <%= link_to edit_user_registration_path do %>
+        <p>Edit Profile</p>
+        <% end %>
+      </button>
+      <button class="btn btn-secondary">
+          <%= link_to edit_user_registration_path do %>
+          <p>Log out</p>
+          <% end %>
+       </button>
+       </div>
+  </div>
+<br>
+
+
+
+
+<div class="profile-settings">
+
+  <button class="btn btn-link">
     <%= link_to new_user_session_path do %>
-    <p>Sign In / Log in</p>
+    <p>Language</p>
     <% end %>
+  </button>
 
-    <%= link_to new_user_registration_path do %>
-    <p>Sign Up</p>
+  <button class="btn btn-link">
+    <%= link_to new_user_session_path do %>
+    <p>Dark Mode</p>
     <% end %>
+  </button>
 
-    <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-    <p>Log out</p>
+  <button class="btn btn-link">
+    <%= link_to new_user_session_path do %>
+    <p>Help</p>
     <% end %>
+  </button>
+
+    <button class="btn btn-link">
+    <%= link_to new_user_session_path do %>
+    <p>Privacy</p>
+    <% end %>
+  </button>
+  </div>
+<br>
+
+
+</div>

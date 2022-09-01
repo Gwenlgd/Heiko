@@ -13,6 +13,16 @@ box-shadow: none;
 text-decoration: none !important;
 }
 
+.btn-primary a {
+
+  color: $white;
+  text-decoration: none;
+}
+
+.btn-primary p {
+  margin-bottom: 0px;
+}
+
 .btn-primary:hover {
   background-color: $white;
   transition-duration: 0.5s;
@@ -33,9 +43,48 @@ box-shadow: none;
 text-decoration: none !important;
 }
 
+.btn-secondary a {
+
+  color: $green;
+  text-decoration: none;
+}
+
+.btn-secondary p {
+  margin-bottom: 0px;
+  color: $green;
+}
+
 .btn-secondary:hover {
   background-color: $green;
   transition-duration: 0.5s;
   border-color: $white;
   color: $white;
+}
+
+
+.btn-link {
+  position: relative;
+  width: 330px;
+  height: 30px;
+  background-color: white;
+  text-align: left;
+  border-radius: 0px;
+  border-color: $offwhite;
+  box-shadow: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.btn-link a {
+
+  color: $black;
+  text-decoration: none;
+}
+
+.btn-link p {
+  margin-bottom: 0px;
+  text-decoration: none;
+  margin-left: 18px;
 }

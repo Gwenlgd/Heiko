@@ -3,7 +3,12 @@
 
     <%= calendar(number_of_days: 1) do |date| %>
       <%= link_to calendar_path do %>
+      <div class="day-name">
+      <%= date.strftime('%A') %>
+      </div>
+      <div class="day-number">
       <%= date.strftime('%e') %>
+      </div>
       <% end %>
     <% end %>
   </div>

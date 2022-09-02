@@ -10,10 +10,13 @@ require "csv"
 
 
 puts "Cleaning database..."
+ReportFoodItem.destroy_all
+ReportMood.destroy_all
+ReportFeeling.destroy_all
+Report.destroy_all
 User.destroy_all
 FoodItem.destroy_all
 Recipe.destroy_all
-Report.destroy_all
 
 puts "Creating users..."
 

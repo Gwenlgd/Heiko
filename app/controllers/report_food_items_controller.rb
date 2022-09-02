@@ -8,7 +8,7 @@ class ReportFoodItemsController < ApplicationController
     @report_food_item = ReportFoodItem.new
     @food_items = FoodItem.all
     @report = Report.find(params[:report_id])
-    @recent_report_food_item = ReportFoodItem.joins(:report).where(report: { user_id: current_user.id }).order(created_at: :desc).limit(10)
+    @recent_report_food_item = ReportFoodItem.joins(:report).where(meal_type: @report.meal_type, report: { user_id: current_user.id }).order(created_at: :desc).limit(10)
   end
 
 
@@ -20,7 +20,7 @@ class ReportFoodItemsController < ApplicationController
     params[:report_food_item][:food_item_id].reject!(&:blank?)
 
     report_food_item_params[:food_item_id].each do |report_food_item|
-      @report_food_item = ReportFoodItem.new(food_item_id: report_food_item)
+      @report_food_item = ReportFoodItem.new(food_item_id: report_food_item, meal_type: @report.meal_type)
       @report_food_item.report = @report
       @report_food_item.save!
     end

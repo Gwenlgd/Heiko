@@ -1,15 +1,13 @@
 <div class="my-container">
 
-
   <div class="profile">
-    <%= image_tag 'user_profile.png', id: "profile-pic" %>
-    <br>
+    <%= inline_svg_tag "person.svg", id: "profile-pic" %>
     <h2>Gwen Legrand</h2>
     <p>Gwenlg@test.com</p>
     <div class="logout">
       <button class="btn btn-primary">
         <%= link_to edit_user_registration_path do %>
-        <p>Edit Profile</p>
+        <p>Edit profile</p>
         <% end %>
       </button>
       <button class="btn btn-secondary">
@@ -20,12 +18,6 @@
        </div>
   </div>
 <br>
-
-
-
-
-
-
 
 <div class="profile-settings">
 

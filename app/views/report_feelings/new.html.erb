@@ -1,13 +1,116 @@
 <%# PATH : new_report_report_feeling %>
 <%# URL : /reports/:report_id/report_feelings/new %>
 
-
-
-
 <div class="week"><%= render "shared/calendar_week" %></div>
 <div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
 
 
 
-<h2> ADD SYMPTOMS PAGE</h2>
- <%# display the symptoms here  (CAROUSEL + CLICKBOX) %>
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h2>Energy</h2>
+        <div class="category-ms energy">
+          <div class="card-ms">
+              <div class="square">
+                <%= inline_svg_tag("invigorated3.svg", class:"card-ms-icon" )  %>
+                </div>
+                  <p>Invigorated</p>
+                </div>
+            <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("fullenergy.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Full of energy</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("sleepy.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Tired</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("no_energy.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>No energy</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <h2>Digestion</h2>
+        <div class="category-ms digestion">
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("bloating.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Bloating</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("intestinal-pain.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Pain</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("gas.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Gas</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("diarrhea.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Diarrhea</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("constipation.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Constipation</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("nausea.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Nausea</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <h2>Skin</h2>
+          <div class="category-ms skin">
+            <div class="card-ms">
+              <div class="square">
+                <%= inline_svg_tag("pimples.svg", class:"card-ms-icon" )  %>
+              </div>
+              <p>Pimples</p>
+            </div>
+            <div class="card-ms">
+              <div class="square">
+                <%= inline_svg_tag("rash.svg", class:"card-ms-icon" )  %>
+              </div>
+              <p>Eczema</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="carousel-item">
+        <h2>Body</h2>
+        <div class="category-ms body">
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("headache.svg", class:"card-ms-icon" )  %>
+            </div>
+            <p>Headache</p>
+          </div>
+          <div class="card-ms">
+            <div class="square">
+              <%= inline_svg_tag("asthma.svg", class:"card-ms-icon" )  %>
+            </div>
+              <p>Asthma</p>
+          </div>
+        </div>
+      </div>
+  </div>

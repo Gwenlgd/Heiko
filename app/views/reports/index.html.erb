@@ -4,18 +4,8 @@
 <%# no my-container %>
   <div class="week"><%= render "shared/calendar_week" %></div>
 <%# no my-container %>
+  <div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
 
-
-
-<div class="my-container">
-  <div class="day-cal-report">
-    <%= calendar(number_of_days: 1) do |date| %>
-      <%= link_to calendar_path do %>
-      <div class="day-name">
-      <%= date.strftime('%A') %>
-      <% end %>
-    <% end %>
-  </div>
 
   <h2>Below what you have eaten today!</h2>
 </div>

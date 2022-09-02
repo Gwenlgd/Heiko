@@ -1,0 +1,9 @@
+  <div class="day-cal-report">
+    <%= calendar(number_of_days: 1) do |date| %>
+      <%= link_to calendar_path do %>
+      <div class="day-name">
+      <%= date.strftime('%A') %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>

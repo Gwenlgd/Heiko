@@ -12,7 +12,6 @@ class ReportsController < ApplicationController
   end
 
 
-
   def create
     @report = Report.new(user_id: current_user.id, date: Date.today)
 

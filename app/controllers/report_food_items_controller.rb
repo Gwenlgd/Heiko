@@ -25,9 +25,7 @@ class ReportFoodItemsController < ApplicationController
       @report_food_item.report = @report
       @report_food_item.save!
     end
-
     redirect_to report_path(@report)
-
   end
 
   private

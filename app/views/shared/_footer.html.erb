@@ -64,9 +64,12 @@
     </div>
   </div>
 
-  <%= link_to new_user_session_path do %>
+  <%= link_to reports_path do %>
   <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
   <% end %>
+  <%#   reminder change link to show page ( report_path instead of index (reports_path)!!        %>
+
+
 
   <%= link_to settings_path do %>
   <%= inline_svg_tag "person.svg", class: "footer-icon" %>

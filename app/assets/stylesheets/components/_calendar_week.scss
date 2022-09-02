@@ -140,3 +140,18 @@ td {
   box-shadow: 0px 0px 0px 0px transparent;
   padding-top: 30px;
 }
+
+.day-cal-report .calendar-heading {
+  display: none ;
+}
+
+.day-cal-report .simple-calendar .today {
+  background-color: $white;
+  box-shadow:  0px 0px 0px 0px;
+}
+
+.day-cal-report .simple-calendar .today a {
+  color: black;
+  text-decoration: none;
+  font-size: 26px;
+}

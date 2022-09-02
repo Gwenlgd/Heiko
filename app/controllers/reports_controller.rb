@@ -13,8 +13,10 @@ class ReportsController < ApplicationController
 
 
   def create
-    @report = Report.new(user_id: current_user.id, date: Date.today)
-
+    @report = current_user.reports.find_by(date: Date.today)
+    unless @report
+      @report = Report.new(user_id: current_user.id, date: Date.today)
+    end
     if params[:category] == "Breakfast"
       @report.meal_type = "Breakfast"
       if @report.save
@@ -25,8 +27,8 @@ class ReportsController < ApplicationController
       if @report.save
         redirect_to new_report_report_food_item_path(@report)
       end
-    elsif params[:category] == "Diner"
-      @report.meal_type = "Diner"
+    elsif params[:category] == "Dinner"
+      @report.meal_type = "Dinner"
       if @report.save
         redirect_to new_report_report_food_item_path(@report)
       end

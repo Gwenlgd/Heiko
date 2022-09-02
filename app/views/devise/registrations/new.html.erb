@@ -9,36 +9,42 @@
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                placeholder: "first name?",
+                placeholder: "First name",
                 label: false,
                 input_html: { autocomplete: "first name" }%>
     <%= f.input :last_name,
                 required: true,
                 autofocus: true,
                 label: false,
-                placeholder: "last name?",
+                placeholder: "Last name",
                 input_html: { autocomplete: "last name" }%>
+    <%= f.input :gender,
+                required: true,
+                autofocus: true,
+                label: false,
+                placeholder: "Gender",
+                input_html: { autocomplete: "gender" }%>
     <%= f.input :age,
                 required: true,
                 autofocus: true,
                 label: false,
-                placeholder: "age?",
+                placeholder: "Age",
                 input_html: { autocomplete: "age" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 label: false,
-                placeholder: "email?",
+                placeholder: "Email",
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
                 label: false,
-                placeholder: "password?",
+                placeholder: "Password",
                 input_html: { autocomplete: "password" } %>
     <%= f.input :password_confirmation,
                 required: true,
                 label: false,
-                placeholder: "password?",
+                placeholder: "Confirm password",
                 input_html: { autocomplete: "password confirmation" } %>
   </div>
 <br>

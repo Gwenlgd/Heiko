@@ -2,7 +2,6 @@
 <%# URL : /reports/:report_id/report_food_items/new%>
 <%# http://localhost:3000/reports/1/report_food_items/new %>
 
-<div class="my-container">
   <h2>Add <%= @report.meal_type %></h2>
   <div class="add-fooditem">
     <%= simple_form_for [@report, @report_food_item] do |f| %>
@@ -23,4 +22,3 @@
       </div>
     </div>
   </div>
-</div>

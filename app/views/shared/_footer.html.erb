@@ -29,25 +29,25 @@
         <div class="inner-inner-food">
           <div class="inner-food">
             <button class="btn btn-primary">
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to reports_path(category: "Breakfast"), data: {turbo_method: :post} do %>
                 <p>Breakfast</p>
               <% end %>
             </button>
 
             <button class="btn btn-primary">
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to reports_path(category: "Lunch"), data: {turbo_method: :post} do %>
                 <p>Lunch</p>
               <% end %>
             </button>
           </div>
           <div class="inner-food">
             <button class="btn btn-primary">
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to reports_path(category: "Diner"), data: {turbo_method: :post} do %>
                 <p>Diner</p>
               <% end %>
             </button>
             <button class="btn btn-primary">
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to reports_path(category: "Snacks"), data: {turbo_method: :post} do %>
                 <p>Snacks</p>
               <% end %>
             </button>
@@ -55,7 +55,7 @@
           </div>
           <div class="water">
             <button class="btn btn-primary">
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to reports_path(category: "Drinks"), data: {turbo_method: :post} do %>
                 <p>Drinks</p>
               <% end %>
             </button>

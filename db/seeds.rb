@@ -10,10 +10,10 @@ require "csv"
 
 
 puts "Cleaning database..."
-Feeling.destroy_all
-Mood.destroy_all
 User.destroy_all
 FoodItem.destroy_all
+Recipe.destroy_all
+Report.destroy_all
 
 puts "Creating users..."
 
@@ -35,53 +35,6 @@ grant = User.create!(first_name: "Grant", last_name: "N.", email: "grantn@test.c
 eric = User.create!(first_name: "Eric", last_name: "J.", email: "ericj@test.com", password: "paradise", age: 29, gender: "Men")
 viktor = User.create!(first_name: "eric", last_name: "F.", email: "viktorf@test.com", password: "paradise", age: 29, gender: "Men")
 alex = User.create!(first_name: "Alex", last_name: "R.", email: "alexr@test.com", password: "paradise", age: 29, gender: "Men")
-
-
-puts "Creating feelings..."
-
-# FEELINGS
-
-# energy
-Feeling.create!(name: "Invigorated", category: "Energy")
-Feeling.create!(name: "Full of energy", category: "Energy")
-Feeling.create!(name: "Tired", category: "Energy")
-Feeling.create!(name: "No energy", category: "Energy")
-
-# gut
-Feeling.create!(name: "Bloating", category: "Digestion") # ok ??
-Feeling.create!(name: "Stomach pain", category: "Digestion") # ok
-Feeling.create!(name: "Gas", category: "Digestion") # ok
-Feeling.create!(name: "Diarrhea", category: "Digestion") # ok
-Feeling.create!(name: "Constipation", category: "Digestion")
-Feeling.create!(name: "Nausea", category: "Digestion") # ok
-
-
-# skin
-Feeling.create!(name: "Pimples", category: "Skin") # ok
-Feeling.create!(name: "Eczema", category: "Skin") # ok
-
-
-# body
-Feeling.create!(name: "Headache", category: "Body") # ok
-Feeling.create!(name: "Hayfever", category: "Body")
-Feeling.create!(name: "Asthma", category: "Body") # ok
-
-
-puts "Creating moods..."
-
-# MOODS
-Mood.create!(name: "Super happy")
-Mood.create!(name: "Happy") # ok
-Mood.create!(name: "Sad") # ok
-Mood.create!(name: "Angry") # ok
-
-# RECIPES
-
-Recipe.create!(name: "Pasta Carbonara")
-Recipe.create!(name: "Gado Gado")
-Recipe.create!(name: "Chicken cream")
-Recipe.create!(name: "Fried Rice")
-
 
 
 # FOOD ITEMS

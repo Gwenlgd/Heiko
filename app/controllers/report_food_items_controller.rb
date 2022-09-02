@@ -1,5 +1,4 @@
 class ReportFoodItemsController < ApplicationController
-  # before_action :set_foor_items, only: [:create, :new]
 
   def show
     @food_items = ReportFoodItem.food_item.name
@@ -34,7 +33,4 @@ class ReportFoodItemsController < ApplicationController
     params.require(:report_food_item).permit(food_item_id: [])
   end
 
-  # def set_foor_items
-  #   @food_item = FoodItem.find(params[:id])
-  # end
 end

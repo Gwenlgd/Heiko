@@ -16,12 +16,12 @@
       <div class="inner-dropup">
         <div class="inner-feelings">
           <button class="btn btn-primary">
-            <%= link_to edit_user_registration_path do %>
+            <%= link_to reports_path(category: "Moods"), data: {turbo_method: :post} do %>
               <p>Mood</p>
             <% end %>
           </button>
           <button class="btn btn-primary">
-            <%= link_to edit_user_registration_path do %>
+            <%= link_to reports_path(category: "Symptoms"), data: {turbo_method: :post} do %>
               <p>Symptoms</p>
             <% end %>
           </button>
@@ -64,9 +64,12 @@
     </div>
   </div>
 
-  <%= link_to new_user_session_path do %>
+  <%= link_to reports_path do %>
   <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
   <% end %>
+  <%#   reminder change link to show page ( report_path instead of index (reports_path)!!        %>
+
+
 
   <%= link_to settings_path do %>
   <%= inline_svg_tag "person.svg", class: "footer-icon" %>

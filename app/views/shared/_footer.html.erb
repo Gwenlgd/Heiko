@@ -61,8 +61,15 @@
     </div>
   </div>
 
-  <%= link_to reports_path do %>
-  <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
+  <% if user_signed_in? && current_user.reports.find_by(date: Date.today) %>
+    <% report = current_user.reports.find_by(date: Date.today) %>
+    <%= link_to report_path(report) do %>
+      <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
+    <% end %>
+  <% else %>
+    <%= link_to reports_path do %>
+    <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
+    <% end %>
   <% end %>
   <%#   reminder change link to show page ( report_path instead of index (reports_path)!!        %>
 

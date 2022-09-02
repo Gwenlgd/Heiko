@@ -1,41 +1,18 @@
 <%# PATH: report %>
 <%# URL: /reports/:id %>
 
-<%#
+
+<%# <%= @report.food_item.meal_type  %>
+
+<%# <%= today_report.report_food_items.group(:meal_type).count  %>
+
+
 <h2>Show Report of the day</h2>
-
-<div class="my-container">
   <div class="overview-day">
-    <div class="overview-meal">
-      <div class="overview-breakfast">
-        <div class="square-overview">
-        </div>
-      </div>
-      <div class="overview-lunch">
-        <div class="square-overview">
-        </div>
-      </div>
-      <div class="overview-dinner">
-        <div class="square-overview">
-        </div>
-      </div>
-      <div class="overview-snacks">
-        <div class="square-overview">
-        </div>
-      </div>
-      <div class="overview-drinks">
-        <div class="square-overview">
-        </div>
-      </div>
-    </div>
-
-    <div class="overview-moods">
-
-    </div>
-
-    <div class="overiew-feelings">
-
-    </div>
-
+  <% @report_food_items.each do | group | %>
+  <p><%= @meal_type_name = group[0]  %></p>
+  <% group[1].each do |report_food_item|%>
+  <%= report_food_item.food_item.name %>
+      <% end %>
+    <% end %>
   </div>
-</div> %>

@@ -1,7 +1,6 @@
 // .calendar-month
 
 .simple-calendar {
-  padding: 0px 5px;
   border: none;
 
   table {
@@ -31,8 +30,10 @@
 
 
 .simple-calendar .today {
-  background-color: $green;
-  border-radius: 5px;
+  background-color: $offwhite;
+  border-radius: 30px;
+  width: 30px;
+  box-shadow: 0px 0px 2px 6px $green;
 }
 
 .simple-calendar .prev-month {

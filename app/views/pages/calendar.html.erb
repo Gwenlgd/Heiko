@@ -9,25 +9,3 @@
   <%= date.strftime('%e') %>
 <% end %>
 </div>
-
-<div class="my-container">
-<div class="week">
-<%= week_calendar(number_of_weeks: 1) do |date| %>
-  <%= date.strftime('%e') %>
-<% end %>
-</div>
-</div>
-
-<div class="my-container">
-  <div class="day-cal">
-    <%= calendar(number_of_days: 1) do |date| %>
-      <%= link_to calendar_path do %>
-      <div class="day-name">
-      <%= date.strftime('%A') %>
-      </div>
-      <div class="day-number">
-      <%= date.strftime('%e') %>
-      </div>
-      <% end %>
-    <% end %>
-  </div>

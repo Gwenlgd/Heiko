@@ -60,7 +60,7 @@ Feeling.create!(name: "Nausea", category: "Digestion") # ok
 Feeling.create!(name: "Pimples", category: "Skin") # ok
 Feeling.create!(name: "Eczema", category: "Skin") # ok
 
-a
+
 # body
 Feeling.create!(name: "Headache", category: "Body") # ok
 Feeling.create!(name: "Hayfever", category: "Body")

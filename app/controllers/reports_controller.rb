@@ -6,10 +6,15 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report_moods = @report.report_moods
-    @report_feelings = @report.report_feelings
-    @report_food_items = @report.report_food_items
-  end
+    @report = Report.find(params[:id])
+    @food_item = []
+    @food_item_id = []
+    @meal_type_name = []
+    @report_food_items = @report.report_food_items.group_by {|report_food_item| report_food_item.meal_type}
+
+    end
+    # @report_moods = @report.report_moods
+    # @report_feelings = @report.report_feelings
 
 
   def create

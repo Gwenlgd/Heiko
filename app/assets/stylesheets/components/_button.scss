@@ -8,14 +8,14 @@ background-color: $green;
 text-align: center;
 border-radius: 5px;
 border-color: $green;
-color: $white;
+color: $black;
 box-shadow: none;
 text-decoration: none !important;
 }
 
 .btn-primary a {
 
-  color: $white;
+  color: $black;
   text-decoration: none;
 }
 
@@ -27,7 +27,7 @@ text-decoration: none !important;
   background-color: $white;
   transition-duration: 0.5s;
   border-color: $green;
-  color: $green;
+  color: $black;
 }
 
 .btn-secondary {
@@ -38,27 +38,27 @@ background-color: $white;
 text-align: center;
 border-radius: 5px;
 border-color: $green;
-color: $green;
+color: $black;
 box-shadow: none;
 text-decoration: none !important;
 }
 
 .btn-secondary a {
 
-  color: $green;
+  color: $black;
   text-decoration: none;
 }
 
 .btn-secondary p {
   margin-bottom: 0px;
-  color: $green;
+  color: $black;
 }
 
 .btn-secondary:hover {
   background-color: $green;
   transition-duration: 0.5s;
   border-color: $white;
-  color: $white;
+  color: $black;
 }
 
 

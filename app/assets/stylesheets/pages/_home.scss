@@ -8,13 +8,26 @@
   margin-bottom: 30px;
 }
 
-.dashboard-content {
-  margin-top: 140px;
-}
-
-#p-dashboard-content {
-  margin-top: 40px;
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 95px;
   text-align: center;
+
+  .btn.btn-link {
+    text-align: center;
+  }
+  .footer-icon {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    bottom: -10px;
+  }
+
+  p {
+  margin-top: 30px;
+  margin-bottom: 1rem;
+  }
 }
 
 .profile {

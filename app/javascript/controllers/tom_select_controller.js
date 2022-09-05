@@ -8,6 +8,6 @@ export default class extends Controller {
     new TomSelect(
       this.element ,
       this.optionsValue
-    );
+      );
   }
 }

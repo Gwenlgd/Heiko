@@ -19,8 +19,10 @@ body {
 }
 .card-ms {
 
+  margin-bottom: 20px;
+
   .square {
-  height: 130px;
+  height: 160px;
   width: 130px;
   border-radius: 10px;
   background: $white;
@@ -44,6 +46,43 @@ body {
 
 }
 
+.card-ms-symp {
+
+  margin-bottom: 20px;
+
+  .square {
+  height: 160px;
+  width: 130px;
+  border-radius: 10px;
+  background: $white;
+  margin: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px, rgba(0, 0, 0, 0.10) 0px 8px 16px -8px;
+}
+
+.card-ms-icon {
+    width: 90px;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+
+    path, circle {
+      fill: $green;
+
+    }
+  }
+
+}
+
+
 .categoryy {
   margin-top: -20px;
+
+  h2 {
+    color: $green;
+  }
+
 }

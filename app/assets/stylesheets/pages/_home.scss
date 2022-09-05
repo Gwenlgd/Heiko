@@ -8,7 +8,19 @@
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  }
+
+.dashboard-main-container {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .dashboard-container {
@@ -35,6 +47,7 @@
 
 .footer-icon-dashboard {
   height: 35px;
+  opacity: 0.2;
 }
 
 .profile {
@@ -59,4 +72,38 @@ flex-direction: column;
   color: $offwhite;
   text-decoration: none;
   margin: 105px;
+}
+
+.landingpage {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+  background-image: url('video.gif');
+  background-position: center;
+  background-size: cover;
+  height: 673px;
+
+
+  .header h1 {
+    text-align: right;
+    font-size: 60px;
+    margin-top: 190px;
+    letter-spacing: 0px;
+    margin-right: 45px
+    }
+
+  p {
+    font-size: 17px;
+  }
+
+  .btn-primary {
+    width: 130px;
+    margin: 10px 45px;
+  }
+
+}
+
+.landingpage-content {
+  padding: 10px 45px;
 }

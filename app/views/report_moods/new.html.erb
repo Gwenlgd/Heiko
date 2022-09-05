@@ -5,6 +5,10 @@
 <div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
 
  <%# display the moods here %>
+ <%= simple_form_for([@report, @report_mood]) do |f| %>
+   <%= f.input :mood_id, collection: Mood.all, input_html: { class: "card-ms-overview", multiple: true } %>
+   <%= f.submit %>
+ <% end %>
 
  <div class="mood-selector">
   <div class="category-ms moods">

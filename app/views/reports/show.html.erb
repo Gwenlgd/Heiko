@@ -10,6 +10,11 @@
 <div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
 
 <h2> Moods / Symptoms </h2>
+
+
+  <% @report.moods.each do |mood| %>
+    <p><%= mood.name %></p>
+  <% end %>
   <div class="fake">
     <div class="category-ms-overview">
       <div class="card-ms-overview">

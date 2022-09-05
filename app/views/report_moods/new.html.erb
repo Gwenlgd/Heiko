@@ -6,68 +6,17 @@
 
  <%# display the moods here %>
  <%= simple_form_for([@report, @report_mood]) do |f| %>
-   <%= f.input :mood_id, collection: Mood.all, input_html: { class: "card-ms-overview", multiple: true } %>
-   <%= f.submit %>
+   <%= f.input :mood_id,
+            as: :check_boxes,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-ms-moods',
+            item_wrapper_class: 'card-ms',
+            input_html: {class: 'card-ms-overview', multiple: true},
+            label_method: ->(mood) { "<div class=\"square\">#{inline_svg_tag("#{mood.name}.svg", class: "card-ms-icon")} <p>#{mood.name}</p></div>".html_safe },
+            collection: Mood.all %>
+    <%= f.submit "Add mood", class:"btn btn-primary"%>
+
  <% end %>
-
- <div class="mood-selector">
-
-<div class="category-ms moods">
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("superhappy.svg", class:"card-ms-icon" )  %>
-          <p>Super happy</p>
-      </div>
-    </div>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("happy.svg", class:"card-ms-icon" )  %>
-          <p>Happy</p>
-      </div>
-    </div>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("crying.svg", class:"card-ms-icon" )  %>
-         <p>Sad</p>
-      </div>
-
-    </div>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("anxious.svg", class:"card-ms-icon" )  %>
-        <p>Anxious</p>
-      </div>
-
-    </div>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("stressed.svg", class:"card-ms-icon" )  %>
-        <p>Stressed</p>
-      </div>
-
-    </div>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("angry.svg", class:"card-ms-icon" )  %>
-        <p>Angry</p>
-      </div>
-
-    </div>
-
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("stressed.svg", class:"card-ms-icon" )  %>
-        <p>Grumpy</p>
-      </div>
-
-    </div>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("angry.svg", class:"card-ms-icon" )  %>
-        <p>Annoyed</p>
-      </div>
-
-    </div>
   </div>
 
 </div>

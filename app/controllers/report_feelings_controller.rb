@@ -19,7 +19,7 @@ class ReportFeelingsController < ApplicationController
     params[:report_feeling][:feeling_id].reject!(&:blank?)
 
     report_feeling_params[:feeling_id].each do |report_feeling|
-      @report_feeling = ReportFoodItem.new(feeling_id: report_feeling)
+      @report_feeling = ReportFeeling.new(feeling_id: report_feeling)
       @report_feeling.report = @report
       @report_feeling.save!
     end

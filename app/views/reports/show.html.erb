@@ -13,32 +13,31 @@
 
 
   <% @report.moods.each do |mood| %>
-    <p><%= mood.name %></p>
+    <div class="card-ms">
+      <div class="square">
+        <%= inline_svg_tag("#{mood.name}.svg", class:"card-ms-icon" )  %>
+        <p><%= mood.name %></p>
+      </div>
+    </div>
   <% end %>
+
+  <% @report.feelings.each do |feeling| %>
+    <div class="card-ms">
+      <div class="square">
+        <%= inline_svg_tag("#{feeling.name}.svg", class:"card-ms-icon" )  %>
+        <p><%= feeling.name %></p>
+      </div>
+    </div>
+  <% end %>
+
   <div class="fake">
     <div class="category-ms-overview">
       <div class="card-ms-overview">
-        <div class="square-over">
-          <%= inline_svg_tag("sleepy.svg", class:"card-ms-overview-icon" )  %>
-        </div>
-      </div>
-    </div>
-    <div class="category-ms-overview">
-      <div class="card-ms-overview">
-        <div class="square-over">
-          <%= inline_svg_tag("bloating.svg", class:"card-ms-overview-icon" )  %>
-        </div>
-      </div>
-    </div>
-    <div class="category-ms-overview">
-      <div class="card-ms-overview">
-        <div class="square-over">
-          <%= inline_svg_tag("intestinal-pain.svg", class:"card-ms-overview-icon" )  %>
-        </div>
+
       </div>
     </div>
   </div>
-  <p>selected icons mood and symotom here!!</p>
+  <p>selected icons mood and symptom here!!</p>
 <br><br><br> <br>
 
 <h2>Meals</h2>

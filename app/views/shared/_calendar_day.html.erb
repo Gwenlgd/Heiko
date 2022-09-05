@@ -1,3 +1,4 @@
+<div class="my-container">
   <div class="day-cal">
     <%= calendar(number_of_days: 1) do |date| %>
       <%= link_to calendar_path do %>
@@ -10,12 +11,4 @@
       <% end %>
     <% end %>
   </div>
-
-
-<div class="dashboard-container">
-  <h2 class="dashboard-content">Hi Gaby,</h2>
-  <p>You haven't strated yet. <br> Add your first log and start your journey to a better balance.</p>
-    <%= link_to reports_path do %>
-  <%= inline_svg_tag "arrow-down.svg", class: "footer-icon" %>
-  <% end %>
 </div>

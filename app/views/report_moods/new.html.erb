@@ -1,5 +1,12 @@
-<h2> All Moods </h2>
+<%# PATH : new_report_report_mood %>
+<%# URL : /reports/:report_id/report_moods/new %>
 
+<div class="week"><%= render "shared/calendar_week" %></div>
+<div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
+
+ <%# display the moods here %>
+
+ <div class="mood-selector">
   <div class="category-ms moods">
     <div class="card-ms">
       <div class="square">
@@ -38,3 +45,4 @@
       <p>Angry</p>
     </div>
   </div>
+</div>

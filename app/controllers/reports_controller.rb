@@ -6,15 +6,22 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report_moods = @report.report_moods
-    @report_feelings = @report.report_feelings
-    @report_food_items = @report.report_food_items
-  end
+    @report = Report.find(params[:id])
+    @food_item = []
+    @food_item_id = []
+    @meal_type_name = []
+    @report_food_items = @report.report_food_items.group_by {|report_food_item| report_food_item.meal_type}
+
+    end
+    # @report_moods = @report.report_moods
+    # @report_feelings = @report.report_feelings
 
 
   def create
-    @report = Report.new(user_id: current_user.id, date: Date.today)
-
+    @report = current_user.reports.find_by(date: Date.today)
+    unless @report
+      @report = Report.new(user_id: current_user.id, date: Date.today)
+    end
     if params[:category] == "Breakfast"
       @report.meal_type = "Breakfast"
       if @report.save
@@ -25,8 +32,8 @@ class ReportsController < ApplicationController
       if @report.save
         redirect_to new_report_report_food_item_path(@report)
       end
-    elsif params[:category] == "Diner"
-      @report.meal_type = "Diner"
+    elsif params[:category] == "Dinner"
+      @report.meal_type = "Dinner"
       if @report.save
         redirect_to new_report_report_food_item_path(@report)
       end

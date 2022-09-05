@@ -11,6 +11,12 @@
 
 }
 
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  }
+
 .dashboard-main-container {
 display: flex;
 flex-direction: column;
@@ -41,6 +47,7 @@ align-items: center;
 
 .footer-icon-dashboard {
   height: 35px;
+  opacity: 0.2;
 }
 
 .profile {
@@ -72,9 +79,10 @@ flex-direction: column;
   flex-direction: column;
   text-align: right;
   align-items: flex-end;
-  background-image: url('..gif');
-  background-position: left;
+  background-image: url('video.gif');
+  background-position: center;
   background-size: cover;
+  height: 673px;
 
 
   .header h1 {
@@ -96,6 +104,6 @@ flex-direction: column;
 
 }
 
-.landingpage.content {
+.landingpage-content {
   padding: 10px 45px;
 }

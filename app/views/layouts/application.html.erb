@@ -12,9 +12,9 @@
 
   <body>
     <div class="page-container">
-      <div class="navbar-container"><%= render "shared/navbar" %></div>
-      <div class="my-container"><%= yield %></div>
-      <div class="footer-container"><%= render "shared/footer" %></div>
+      <div class="navbar-container <%= "d-none" if action_name == 'home' %>"><%= render "shared/navbar" %></div>
+      <div class="<%= "my-container" unless action_name == 'home' %>"> <%=  yield %></div>
+      <div class="footer-container <%= "d-none" if action_name == 'home' %>"><%= render "shared/footer" %></div>
     </div>
   </body>
 </html>

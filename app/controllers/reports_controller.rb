@@ -52,7 +52,7 @@ class ReportsController < ApplicationController
       if @report.save
         redirect_to new_report_report_mood_path(@report)
       end
-    elsif params[:category] == "Symptoms"
+    elsif params[:category] == "Feelings"
       if @report.save
         redirect_to new_report_report_feeling_path(@report)
       end

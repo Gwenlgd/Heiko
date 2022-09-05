@@ -14,6 +14,7 @@ ReportFoodItem.destroy_all
 ReportMood.destroy_all
 ReportFeeling.destroy_all
 Report.destroy_all
+Mood.destroy_all
 User.destroy_all
 FoodItem.destroy_all
 Recipe.destroy_all
@@ -50,6 +51,13 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{row['ingredients']} #{row['id']}"
 end
 
-["Bloated", "Anxious", "Energetic"].each do |name|
+# MOODS
+["Super happy", "Happy", "Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"].each do |name|
   Mood.create!(name: name)
+end
+
+# SYMPTOMS
+
+["Energetic", "OK", "Tired", "No energy", "Bloated", "Stomach pain", "Gas", "Diarrhea", "Constipation", "Nausea", "Pimples", "Eczema", "Headache", "Asthma"].each do |name|
+  Feeling.create!(name: name)
 end

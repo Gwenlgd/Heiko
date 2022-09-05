@@ -19,9 +19,8 @@
             input_html: {class: 'card-ms-overview', multiple: true},
             label_method: ->(feeling) { "<div class=\"square\">#{inline_svg_tag("#{feeling.name}.svg", class: "card-ms-icon")} <p>#{feeling.name}</p></div>".html_safe },
             collection: Feeling.all %>
-    <%= f.submit "Add symptom", class:"btn btn-primary"%>
+    <%= f.submit "Add symptom", class:"btn btn-primary, ml-3"%>
      <% end %>
-          <h2>Energy</h2>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

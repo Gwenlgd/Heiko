@@ -3,22 +3,18 @@
 <%# http://localhost:3000/reports/1/report_food_items/new %>
 
   <h2>Add <%= @report.meal_type %></h2>
-  <div class="add-fooditem">
-    <%= simple_form_for [@report, @report_food_item] do |f| %>
-    <%= f.association :food_item, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, inline_label: 'Choose', label: false %>
-    <div>
+    <div class="add-fooditem">
+      <%= simple_form_for [@report, @report_food_item] do |f| %>
+      <%= f.association :food_item, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, inline_label: 'Choose', label: false %>
+
+      <div class="recent-fooditem">
+          <h3>Recents</h3>
+            <div class="recent-fooditem-name">
+              <div class="square">
+                <%= f.input :food_item, as: :check_boxes, collection: @recent_report_food_item, legend_tag: false, label_method: lambda { |food| food.food_item.name }, class:"recent-fooditem-food" %>
+              </div>
+            </div>
+        </div>
         <%= f.button :submit, "Add", class:"btn-submit-report"   %>
-      </div>
-    <% end %>
-
-
-<%# Not working ? %>
-    <div class="recent-fooditem">
-    <h3>Recents</h3>
-      <div class="recent-fooditem-name">
-        <% @recent_report_food_item.each do | report_food_item | %>
-        <ul> <%= report_food_item.food_item.name %> </ul>
         <% end %>
-      </div>
     </div>
-  </div>

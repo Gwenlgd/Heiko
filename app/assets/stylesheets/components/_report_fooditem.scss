@@ -1,7 +1,5 @@
-
 .add-fooditem{
   margin: 20px;
-
 }
 
 .form-select {
@@ -34,8 +32,44 @@
     font-size: 26px;
     margin-top: 30px;
   }
+}
 
-  .recent-fooditem-name {
-    margin-top: 10px;
+.form-check {
+  margin: 2px;
+  padding: 1px;
+  display: inline-block;
+
+}
+
+.recent-fooditem-name {
+  margin-top: 10px;
+  text-transform: capitalize;
+
+  fieldset {
+    display: flex-start;
   }
 }
+
+  // .tag-selector
+  .form-check-input {
+    position: absolute;
+    transform: scale(0);
+}
+
+// .tag-selector + label
+
+.form-check-input + label {
+  cursor: pointer;
+  background-color: $offwhite;
+  border-radius: 5px;
+  color: $black;
+  box-shadow: none;
+  padding: 8px;
+}
+
+// .tag-selector:checked + label
+
+  .square .form-check :checked + label {
+    background-color: $green;
+    color: $white;
+  }

@@ -1,10 +1,8 @@
 <%# PATH : new_report_report_mood %>
 <%# URL : /reports/:report_id/report_moods/new %>
 
-<div class="week"><%= render "shared/calendar_week" %></div>
-<div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
-<div id=“MSCarousel” class="carousel slide" data-ride="carousel">
-</div>
+<div class="week"><%= render "shared/calendar_week", report: @report %></div>
+<div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
 
  <%# display the moods here %>
 <%= simple_form_for([@report, @report_mood]) do |f| %>

@@ -4,18 +4,21 @@
 <%# <%= @report.food_item.meal_type  %>
 <%# <%= today_report.report_food_items.group(:meal_type).count  %>
 
-<div class="week"><%= render "shared/calendar_week" %></div>
-<div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
+<div class="week"><%= render "shared/calendar_week", report: @report %></div>
+<div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
 
   <h2>Meals</h2>
-
+  <%= @report.date %>
   <div class="overview-day">
     <% @report_food_items.each do | group | %>
       <h3><%= @meal_type_name = group[0]  %></h3>
         <% group[1].each do |report_food_item|%>
-        <%= report_food_item.food_item.name %>
+          <%= simple_form_for [@report, report_food_item], method: :delete do |f| %>
+          <%= report_food_item.food_item.name %>
+          <button class="btn-delete-fi" type="submit">X</button>
+          <% end %>
         <% end %>
-        <% end %>
+    <% end %>
   </div>
 
   <div class="profile-settings">
@@ -36,24 +39,30 @@
   <h2>Mood</h2>
 
 <div class="show-mood">
-  <% @report.moods.each do |mood| %>
-    <div class="card-ms">
-      <div class="square">
-        <%= inline_svg_tag("#{mood.name}.svg", class:"card-ms-icon" )  %>
-        <p><%= mood.name %></p>
+  <% @report.report_moods.each do |report_mood| %>
+    <%= simple_form_for [@report, report_mood], method: :delete do |f| %>
+      <div class="card-ms">
+        <div class="square">
+          <%= inline_svg_tag("#{report_mood.mood.name}.svg", class:"card-ms-icon" )  %>
+          <p><%= report_mood.mood.name %></p>
+          <button class="btn-delete-ms" type="submit">X</button>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
   </div>
 
   <h2>Symptoms</h2>
   <div class="show-feeling">
-    <% @report.feelings.each do |feeling| %>
-      <div class="card-ms">
-        <div class="square">
-          <%= inline_svg_tag("#{feeling.name}.svg", class:"card-ms-icon" )  %>
-          <p><%= feeling.name %></p>
+    <% @report.report_feelings.each do |report_feeling| %>
+      <%= simple_form_for [@report, report_feeling], method: :delete do |f| %>
+        <div class="card-ms">
+          <div class="square">
+            <%= inline_svg_tag("#{report_feeling.feeling.name}.svg", class:"card-ms-icon" )  %>
+            <p><%= report_feeling.feeling.name %></p>
+            <button class="btn-delete-ms" type="submit">X</button>
+          </div>
         </div>
-      </div>
       <% end %>
+    <% end %>
   </div>

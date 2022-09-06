@@ -1,23 +1,29 @@
+
+
   <div class="dashboard-main-container">
     <div class="day-cal">
+
       <%= calendar(number_of_days: 1) do |date| %>
-        <%= link_to calendar_path do %>
-        <div class="day-name">
+      <div class="day-name">
           <%= date.strftime('%A') %>
         </div>
-        <div class="day-number">
-          <%= date.strftime('%e') %>
-        </div>
-        <% end %>
+         <% report = Report.find_by(user: current_user, date: date) %>
+          <% if report %>
+            x
+          <%= link_to date.strftime('%e'), report_path(report) %>
+          <% else %>
+          <%= link_to new_report_path(date: date) do %><%= date.strftime('%e') %>
+          <% end %>
+          <% end %>
       <% end %>
   </div>
 
 
   <div class="dashboard-container">
-    <h2 class="dashboard-content">Hi Gaby,</h2>
-    <p>You haven't strated yet. <br> Add your first log and start your journey to a better balance.</p>
+    <h2 class="dashboard-content">Welcome <%= current_user.first_name %>,</h2>
+    <p>Let's get started.<br> Add your first log and start your journey <br> to a better balance.</p>
       <%= link_to reports_path do %>
-    <%= inline_svg_tag "angles-down.svg", class: "footer-icon-dashboard" %>
+    <%= inline_svg_tag "chevron-down-solid.svg", class: "footer-icon-dashboard" %>
     <% end %>
   </div>
 </div>

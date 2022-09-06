@@ -19,10 +19,17 @@ class ReportsController < ApplicationController
 
 
   def create
-    @report = current_user.reports.find_by(date: Date.today)
-    unless @report
-      @report = Report.new(user_id: current_user.id, date: Date.today)
+    if params[:date]
+      date = params[:date].to_date
+    else
+      date = Date.today
     end
+    @report = current_user.reports.find_by(date: date)
+
+    unless @report
+      @report = Report.new(user_id: current_user.id, date: date)
+    end
+
     if params[:category] == "Breakfast"
       @report.meal_type = "Breakfast"
       if @report.save

@@ -5,4 +5,5 @@ class ReportMood < ApplicationRecord
   def index
     @reportMoods = ReportMood.all
   end
+
 end

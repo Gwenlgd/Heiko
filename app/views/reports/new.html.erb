@@ -3,7 +3,18 @@
 
 <h2>NEW PAGE REPORTS</h2>
 
-<p> name of date and date</p>
+
+  <div class="day-cal-report">
+    <%= calendar(number_of_days: 1) do |date| %>
+      <% date = date - (Date.today - report.date).to_i %>
+    <% end %>
+  </div>
+
+
+<p><%= current_user.first_name %></p>
+
+<p> add name day and date</p>
+
 
 <div class="inner-dropup">
   <div class="inner-feelings">

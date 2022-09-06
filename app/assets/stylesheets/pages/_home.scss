@@ -79,11 +79,10 @@ flex-direction: column;
   flex-direction: column;
   text-align: right;
   align-items: flex-end;
-  background-image: url('video.gif');
+  background-image: url('heiko.gif');
   background-position: center;
   background-size: cover;
   height: 100vh;
-  opacity: 0.4;
 
   .header h1 {
     text-align: right;
@@ -121,5 +120,5 @@ flex-direction: column;
 }
 
 #typed {
-  height: 150px;
+    height: 150px;
 }

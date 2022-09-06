@@ -14,10 +14,10 @@
 
 
   <div class="dashboard-container">
-    <h2 class="dashboard-content">Hi Gaby,</h2>
-    <p>You haven't strated yet. <br> Add your first log and start your journey to a better balance.</p>
+    <h2 class="dashboard-content">Welcome <%= current_user.first_name %>,</h2>
+    <p>Let's get started.<br> Add your first log and start your journey <br> to a better balance.</p>
       <%= link_to reports_path do %>
-    <%= inline_svg_tag "angles-down.svg", class: "footer-icon-dashboard" %>
+    <%= inline_svg_tag "chevron-down-solid.svg", class: "footer-icon-dashboard" %>
     <% end %>
   </div>
 </div>

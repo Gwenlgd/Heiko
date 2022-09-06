@@ -8,7 +8,7 @@
 <div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
 
   <h2>Meals</h2>
-  <%= @report.date %>
+
   <div class="overview-day">
     <% @report_food_items.each do | group | %>
       <h3><%= @meal_type_name = group[0]  %></h3>

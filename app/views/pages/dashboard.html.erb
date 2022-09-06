@@ -1,6 +1,6 @@
 
 
-  <div class="dashboard-main-container">
+<div class="dashboard-main-container">
     <div class="day-cal">
 
       <%= calendar(number_of_days: 1) do |date| %>
@@ -9,14 +9,16 @@
         </div>
          <% report = Report.find_by(user: current_user, date: date) %>
           <% if report %>
-            x
+          <div style="text-decoration: none;">
           <%= link_to date.strftime('%e'), report_path(report) %>
+
+          </div>
           <% else %>
           <%= link_to new_report_path(date: date) do %><%= date.strftime('%e') %>
           <% end %>
           <% end %>
       <% end %>
-  </div>
+    </div>
 
 
   <div class="dashboard-container">

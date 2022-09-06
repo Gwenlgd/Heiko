@@ -88,19 +88,47 @@ body {
 
 }
 
+.carousel-control-prev-icon {
+  // content: '<';
+  background-image: url('prev.svg');
+  margin-left: 25px;
+  height: 24px;
+  width: 24px;
+  right: 37px;
+  position: absolute;
+  color: $green !important;
+}
 .carousel-control-next-icon {
   // content: '>';
-  background-image: url('next.png');
-  margin-left: 25px;
+  background-image: url('next.svg');
+  margin-right: 25px;
+  height: 24px;
+  width: 24px;
+  left: 37px;
+  position: absolute;
+  path fill-rule {
+    fill: $green !important;
+  }
 }
 
+
+// SHOW PAGE OVERVIEW OF THE DAY
 .show-feeling {
   display: flex;
   justify-content: center;
 }
 
+// SHOW PAGE OVERVIEW OF THE DAY
 .show-mood {
   display: flex;
+  justify-content: center;
+}
+
+
+// JULES' CAROUSEL CLASS LEAVE IT ALONE (REPORTS MOOD)
+.show-mood-carousel {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 

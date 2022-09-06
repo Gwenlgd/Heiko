@@ -1,4 +1,6 @@
 class ReportFoodItemsController < ApplicationController
+  before_action :set_report_food_item, only: :destroy
+
 
   def show
     @food_items = ReportFoodItem.food_item.name
@@ -27,7 +29,16 @@ class ReportFoodItemsController < ApplicationController
     redirect_to report_path(@report)
   end
 
+  def destroy
+    @report_food_item.destroy
+    redirect_to report_path(@report_food_item.report), status: :see_other
+  end
+
   private
+
+  def set_report_food_item
+    @report_food_item = ReportFoodItem.find(params[:id])
+  end
 
   def report_food_item_params
     params.require(:report_food_item).permit(food_item_id: [])

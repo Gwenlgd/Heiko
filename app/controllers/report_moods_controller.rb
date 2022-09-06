@@ -1,4 +1,5 @@
 class ReportMoodsController < ApplicationController
+  before_action :set_report_mood, only: :destroy
 
   def show
     @moods = ReportMood.mood.name
@@ -24,7 +25,16 @@ class ReportMoodsController < ApplicationController
     redirect_to report_path(@report)
   end
 
+  def destroy
+    @report_mood.destroy
+    redirect_to report_path(@report_mood.report), status: :see_other
+  end
+
   private
+
+  def set_report_mood
+    @report_mood = ReportMood.find(params[:id])
+  end
 
   def report_mood_params
     params.require(:report_mood).permit(mood_id: [])

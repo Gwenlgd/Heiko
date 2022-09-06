@@ -18,6 +18,7 @@ Mood.destroy_all
 User.destroy_all
 FoodItem.destroy_all
 Recipe.destroy_all
+Feeling.destroy_all
 
 puts "Creating users..."
 
@@ -58,6 +59,30 @@ end
 
 # SYMPTOMS
 
-["Energetic", "OK", "Tired", "No energy", "Bloated", "Stomach pain", "Gas", "Diarrhea", "Constipation", "Nausea", "Pimples", "Eczema", "Headache", "Asthma"].each do |name|
-  Feeling.create!(name: name)
+#["Energetic", "OK", "Tired", "No energy", "Bloated", "Stomach pain", "Gas", "Diarrhea", "Constipation", "Nausea", "Pimples", "Eczema", "Headache", "Asthma"].each do |name|
+  #Feeling.create!(name: name)
+#end
+
+# CATEGORIES OF SYMPTOMS 14 total symptoms
+
+# ENERGY CATEGORY 4 items
+["Energetic", "Tired", "OK", "No energy"].each do |name|
+feeling=Feeling.create!(category: "Energy",name: name)
+end
+
+# DIGESTION CATEGORY 6 items
+["Bloated", "Stomach pain", "Gas", "Constipation"].each do |name|
+Feeling.create!(category: "Digestion",name: name)
+end
+
+
+# SKIN CATEGORY 2 items
+["Pimples", "Eczema"].each do |name|
+Feeling.create!(category: "Skin",name: name)
+end
+
+
+# ILLNESS CATEGORY 2 items
+["Headache", "Asthma", "Diarrhea", "Nausea"].each do |name|
+Feeling.create!(category: "Illness",name: name)
 end

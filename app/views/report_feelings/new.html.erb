@@ -4,33 +4,48 @@
 <div class="week"><%= render "shared/calendar_week", report: @report %></div>
 <div class="day-cal-report"><%= render "shared/calendar_day_name" , report: @report %></div>
 
- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
-    <div class="categoryy">
+<%= simple_form_for([@report, @report_feeling]) do |f| %>
+  <fieldset class="mb-3 check_boxes optional report_feeling_feeling_id">
+  <legend class="col-form-label pt-0"> <h4> <center> Symptoms </center> </h4> </legend>
+  <div class="category-ms-symp">
+    <input type="hidden" name="report_feeling[feeling_id][]" value="" autocomplete="off">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-            <%# display the symptoms here %>
-            <%= simple_form_for([@report, @report_feeling]) do |f| %>
-            <%= f.input :feeling_id,
-              as: :check_boxes,
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-ms-symp',
-              item_wrapper_class: 'card-ms',
-              input_html: {class: 'card-ms-overview', multiple: true},
-              label_method: ->(feeling) { "<div class=\"square\">#{inline_svg_tag("#{feeling.name}.svg", class: "card-ms-icon")} <p>#{feeling.name}</p></div>".html_safe },
-              collection: Feeling.all %>
-            <%= f.submit "Add symptom", class:"btn btn-primary, ml-3"%>
-            <% end %>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+        <% @feelings_categories.each_with_index do |type, index| %>
+          <div class="carousel-item <%="active" if index==0 %>">
+            <p>  <center> <%= type %> </center> </p>
+            <div class="show-feeling-carousel">
+              <% Feeling.where(category: type).each do |feeling| %>
+                <div class="card-ms">
+                  <input class="form-check-input check_boxes optional card-ms-overview" type="checkbox" value="<%= feeling.id %>" name="report_feeling[feeling_id][]" id="report_feeling_feeling_id_<%= feeling.id %>">
+                  <label class="form-check-label collection_check_boxes" for="report_feeling_feeling_id_<%= feeling.id %>">
+                    <div class="square">
+                      <%= inline_svg_tag("#{feeling.name}.svg", class: "card-ms-icon") %>
+                      <p><%= feeling.name %></p>
+                    </div>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </fieldset>
+  <center><%= f.submit "Add symptom", class:"btn btn-primary" %></center>
+<% end %>

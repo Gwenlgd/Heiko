@@ -9,7 +9,7 @@ class ReportFeelingsController < ApplicationController
 
   def new
     @report_feeling = ReportFeeling.new
-    @feelings = Feeling.all
+    @feelings_categories = Feeling.pluck(:category).uniq
     @report = Report.find(params[:report_id])
   end
 

@@ -88,30 +88,133 @@ body {
 
 }
 
+.carousel-control-prev-icon {
+  // content: '<';
+  background-image: url('prev.svg');
+  margin-left: 25px;
+  height: 24px;
+  width: 24px;
+  right: 37px;
+  position: absolute;
+  color: $green !important;
+}
 .carousel-control-next-icon {
   // content: '>';
-  background-image: url('next.png');
-  margin-left: 25px;
+  background-image: url('next.svg');
+  margin-right: 25px;
+  height: 24px;
+  width: 24px;
+  left: 37px;
+  position: absolute;
+  path fill-rule {
+    fill: $green !important;
+  }
 }
 
-.show-feeling {
+// PAGE SHOW OVERIEW DAY - FOOD ITEMS CARDS
+
+.show-food {
+  display: flex-start;
+
+  .square {
+    position: relative;
+    // width: max-content;
+    // inline-size: max-content;
+    // height: max-content;
+    // block-size: max-content;
+    background-color: $offwhite;
+    border-radius: 5px;
+    border-color: $offwhite;
+    color: $black;
+    box-shadow: none;
+    padding: 5px;
+    text-transform: capitalize;
+  }
+
+  form {
+    display: inline-block;
+    margin: 4px 4px 4px 0px;
+    padding: 1px;
+  }
+}
+
+// PAGE SHOW OVERIEW DAY - MOOD CARDS
+
+.show-mood {
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+
+  form {
+    display: inline-block;
+    margin: auto;
+    padding: 1px;
+  }
+}
+
+
+// JULES' CAROUSEL CLASS LEAVE IT ALONE (REPORTS MOOD)
+.show-mood-carousel {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.show-mood {
+.show-feeling-carousel {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .show-mood .card-ms .square {
-  height: 98px;
-  width: 80px;
-  padding-top: 15px;
+  height: 100px;
+  width: 90px;
+  padding: 10px 3px 10px 0px;
+  position: relative;
+  font-size: 90%;
+
+  .btn-delete-ms button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+}
+
+.no-margin-square {
+  margin: 12px !important;
+}
+
+// PAGE SHOW OVERIEW DAY - SHOW SYMPTOMS / FEELINGS CARDS
+
+.show-feeling {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+
+  form {
+    display: inline-block;
+    margin: auto;
+    padding: 1px;
+  }
 }
 
 .show-feeling .card-ms .square {
-  height: 98px;
-  width: 80px;
-  padding-top: 15px;
+  height: 100px;
+  width: 90px;
+  padding: 10px 3px 10px 0px;
+  font-size: 90%;
+  position: relative;
+
+  // .btn-delete-ms {
+  //   padding-left: 0px;
+  // }
+
+  .btn-delete-ms button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
 }

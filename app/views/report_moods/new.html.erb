@@ -5,18 +5,64 @@
 <div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
 
  <%# display the moods here %>
- <%= simple_form_for([@report, @report_mood]) do |f| %>
-   <%= f.input :mood_id,
-            as: :check_boxes,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-ms-moods',
-            item_wrapper_class: 'card-ms',
-            input_html: {class: 'card-ms-overview', multiple: true},
-            label_method: ->(mood) { "<div class=\"square\">#{inline_svg_tag("#{mood.name}.svg", class: "card-ms-icon")} <p>#{mood.name}</p></div>".html_safe },
-            collection: Mood.all %>
-    <%= f.submit "Add mood", class:"btn btn-primary"%>
-
- <% end %>
+<%= simple_form_for([@report, @report_mood]) do |f| %>
+  <fieldset class="mb-3 check_boxes optional report_mood_mood_id">
+  <legend class="col-form-label pt-0"> <h4> <center> Mood </center> </h4> </legend>
+  <div class="category-ms-moods">
+    <input type="hidden" name="report_mood[mood_id][]" value="" autocomplete="off">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="show-mood-carousel">
+            <% Mood.limit(4).each do |mood| %>
+              <div class="card-ms">
+                <input class="form-check-input check_boxes optional card-ms-overview" type="checkbox" value="<%= mood.id %>" name="report_mood[mood_id][]" id="report_mood_mood_id_<%= mood.id %>">
+                <label class="form-check-label collection_check_boxes" for="report_mood_mood_id_<%= mood.id %>">
+                  <div class="square">
+                    <%= inline_svg_tag("#{mood.name}.svg", class: "card-ms-icon") %>
+                    <p><%= mood.name %></p>
+                  </div>
+                </label>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="show-mood-carousel">
+            <% Mood.offset(4).limit(4).each do |mood| %>
+              <div class="card-ms">
+                <input class="form-check-input check_boxes optional card-ms-overview" type="checkbox" value="<%= mood.id %>" name="report_mood[mood_id][]" id="report_mood_mood_id_<%= mood.id %>">
+                <label class="form-check-label collection_check_boxes" for="report_mood_mood_id_<%= mood.id %>">
+                  <div class="square">
+                    <%= inline_svg_tag("#{mood.name}.svg", class: "card-ms-icon") %>
+                    <p><%= mood.name %></p>
+                  </div>
+                </label>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
+</fieldset>
+<center><%= f.submit "Add mood", class:"btn btn-primary" %></center>
+<% end %>
 
-</div>
+<%#div class="card-ms">
+      <div class="square">
+        <%= inline_svg_tag("happy.svg", class:"card-ms-icon" )  %>
+          <%#p>Happy</p%>

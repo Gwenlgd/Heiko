@@ -22,7 +22,7 @@
   width: 100%;
   font-size: 12px;
   text-align: left;
-  padding: 10px 10px 30px 10px;
+  padding: 25px 10px 7px 10px;
   border-radius: 4px;
   background-color: white;
 }
@@ -38,4 +38,8 @@
 
 .my-item {
   display: inline-block;
+}
+
+.col-form-label {
+  margin-top: -29px;
 }

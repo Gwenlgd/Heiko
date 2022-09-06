@@ -1,6 +1,15 @@
 
   <div class="week">
     <%= week_calendar(number_of_weeks: 1) do |date| %>
-    <%= date.strftime('%e') %>
+      <% focused_date = date - (Date.today - report.date).to_i %>
+      <% report2 = Report.find_by(user: current_user, date: focused_date) %>
+      <% if report2 %>
+      <div style="background-color: #bedad2; border-radius: 5px; border: solid #bedad2; text-decoration: none;">
+        <%= link_to focused_date.strftime('%e'), report_path(report2) %>
+      </div>
+      <% else %>
+        <%= link_to new_report_path(date: focused_date) do %><%= focused_date.strftime('%e') %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>

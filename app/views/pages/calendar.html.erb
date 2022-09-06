@@ -1,7 +1,27 @@
 
-<%= month_calendar(number_of_weeks: 2) do |date| %>
-  <%= date.strftime('%e') %>
+
+<%= month_calendar do |date| %>
+  <% report = Report.find_by(user: current_user, date: date) %>
+  <% if report %>
+    <div style="background-color: #bedad2; border-radius: 5px; border: solid #bedad2; text-decoration: none;">
+    <%= link_to date.strftime('%e'), report_path(report) %>
+    </div>
+  <% else %>
+    <%= link_to new_report_path(date: date) do %><%= date.strftime('%e') %>
+    <% end %>
+  <% end %>
 <% end %>
 
+<br>
 
-<br><br>
+<%= month_calendar do |date| %>
+  <% report = Report.find_by(user: current_user, date: date) %>
+  <% if report %>
+    <div style="background-color: #bedad2; border-radius: 5px; border: solid #bedad2; text-decoration: none;">
+    <%= link_to date.strftime('%e'), report_path(report) %>
+    </div>
+  <% else %>
+    <%= link_to new_report_path(date: date) do %><%= date.strftime('%e') %>
+    <% end %>
+  <% end %>
+<% end %>

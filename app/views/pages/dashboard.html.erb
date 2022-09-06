@@ -1,16 +1,24 @@
-  <div class="dashboard-main-container">
+
+
+<div class="dashboard-main-container">
     <div class="day-cal">
+
       <%= calendar(number_of_days: 1) do |date| %>
-        <%= link_to calendar_path do %>
-        <div class="day-name">
+      <div class="day-name">
           <%= date.strftime('%A') %>
         </div>
-        <div class="day-number">
-          <%= date.strftime('%e') %>
-        </div>
-        <% end %>
+         <% report = Report.find_by(user: current_user, date: date) %>
+          <% if report %>
+          <div style="text-decoration: none;">
+          <%= link_to date.strftime('%e'), report_path(report) %>
+
+          </div>
+          <% else %>
+          <%= link_to new_report_path(date: date) do %><%= date.strftime('%e') %>
+          <% end %>
+          <% end %>
       <% end %>
-  </div>
+    </div>
 
 
   <div class="dashboard-container">

@@ -88,10 +88,27 @@ body {
 
 }
 
+.carousel-control-prev-icon {
+  // content: '<';
+  background-image: url('prev.svg');
+  margin-left: 25px;
+  height: 24px;
+  width: 24px;
+  right: 37px;
+  position: absolute;
+  color: $green !important;
+}
 .carousel-control-next-icon {
   // content: '>';
-  background-image: url('next.png');
-  margin-left: 25px;
+  background-image: url('next.svg');
+  margin-right: 25px;
+  height: 24px;
+  width: 24px;
+  left: 37px;
+  position: absolute;
+  path fill-rule {
+    fill: $green !important;
+  }
 }
 
 // PAGE SHOW OVERIEW DAY - FOOD ITEMS CARDS
@@ -134,6 +151,20 @@ body {
     margin: auto;
     padding: 1px;
   }
+}
+
+
+// JULES' CAROUSEL CLASS LEAVE IT ALONE (REPORTS MOOD)
+.show-mood-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.show-feeling-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .show-mood .card-ms .square {

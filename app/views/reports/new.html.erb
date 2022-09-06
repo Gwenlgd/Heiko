@@ -1,19 +1,18 @@
 <%# PATH: new_report  %>
 <%# URL: /reports/new %>
 
-<h2>NEW PAGE REPORTS</h2>
 
+<div class="container-add-report-select-day">
 
-  <div class="day-cal-report">
-    <%= calendar(number_of_days: 1) do |date| %>
-      <% date = date - (Date.today - report.date).to_i %>
-    <% end %>
+  <div class="day-name">
+    <%= params[:date].to_date.strftime('%A') %>
   </div>
-
-
-<p><%= current_user.first_name %></p>
-
-<p> add name day and date</p>
+  <div>
+<%= params[:date].to_date.strftime('%B') %> <%= params[:date].to_date.strftime('%e') %>
+</div>
+  <br><br>
+  <p>What would you like to add ?</p>
+</div>
 
 
 <div class="inner-dropup">

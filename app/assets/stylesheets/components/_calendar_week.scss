@@ -26,6 +26,16 @@
   }
 }
 
+.calendar-heading {
+  /* margin-bottom: 10px; */
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    display: none;
+  }
+
+}
 
 .simple-calendar .day {
   height: 30px;
@@ -113,9 +123,7 @@ td {
 
   .calendar-heading {
     display: none;
-
   }
-
 }
 
 .day-cal a {
@@ -139,7 +147,7 @@ td {
   border-radius: 30px;
   width: 30px;
   box-shadow: 0px 0px 0px 0px transparent;
-  padding-top: 30px;
+  padding-top: 24px;
 }
 
 .day-cal-report .calendar-heading {
@@ -155,4 +163,10 @@ td {
   color: black;
   text-decoration: none;
   font-size: 26px;
+}
+
+.container-add-report-select-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

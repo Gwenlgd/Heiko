@@ -15,8 +15,6 @@ class ReportsController < ApplicationController
     @report_food_items = @report.report_food_items.group_by {|report_food_item| report_food_item.meal_type}
 
     end
-    # @report_moods = @report.report_moods
-    # @report_feelings = @report.report_feelings
 
 
   def create

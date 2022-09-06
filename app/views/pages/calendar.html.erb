@@ -1,7 +1,16 @@
 
-<%= month_calendar(number_of_weeks: 2) do |date| %>
-  <%= date.strftime('%e') %>
-<% end %>
 
+<br><br>
+
+<%= month_calendar do |date| %>
+  <% report = Report.find_by(user: current_user, date: date) %>
+  <% if report %>
+    x
+    <%= link_to date.strftime('%e'), report_path(report) %>
+  <% else %>
+    <%= link_to new_report_path(date: date) do %><%= date.strftime('%e') %>
+    <% end %>
+  <% end %>
+<% end %>
 
 <br><br>

@@ -1,8 +1,8 @@
 <%# PATH : new_report_report_feeling %>
 <%# URL : /reports/:report_id/report_feelings/new %>
 
-<div class="week"><%= render "shared/calendar_week" %></div>
-<div class="day-cal-report"><%= render "shared/calendar_day_name" %></div>
+<div class="week"><%= render "shared/calendar_week", report: @report %></div>
+<div class="day-cal-report"><%= render "shared/calendar_day_name" , report: @report %></div>
 
  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
     <div class="categoryy">

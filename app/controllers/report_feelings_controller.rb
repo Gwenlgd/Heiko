@@ -1,6 +1,7 @@
 # SYMPTOMS CONTROLLER
 
 class ReportFeelingsController < ApplicationController
+  before_action :set_report_feeling, only: :destroy
 
   def show
     @feelings = ReportFeeling.feeling.name
@@ -26,7 +27,16 @@ class ReportFeelingsController < ApplicationController
     redirect_to report_path(@report)
   end
 
+  def destroy
+    @report_feeling.destroy
+    redirect_to report_path(@report_feeling.report), status: :see_other
+  end
+
   private
+
+  def set_report_feeling
+    @report_feeling = ReportFeeling.find(params[:id])
+  end
 
   def report_feeling_params
     params.require(:report_feeling).permit(feeling_id: [])

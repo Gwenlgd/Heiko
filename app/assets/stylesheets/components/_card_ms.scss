@@ -132,6 +132,12 @@ body {
   justify-content: center;
 }
 
+.show-feeling-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .show-mood .card-ms .square {
   height: 98px;
   width: 80px;

@@ -61,3 +61,21 @@ end
 ["Energetic", "OK", "Tired", "No energy", "Bloated", "Stomach pain", "Gas", "Diarrhea", "Constipation", "Nausea", "Pimples", "Eczema", "Headache", "Asthma"].each do |name|
   Feeling.create!(name: name)
 end
+
+# CATEGORIES OF SYMPTOMS
+#["Energetic", "Tired", "OK", "No energy"]
+#Energy.create!(name: :name)
+#end
+
+
+#["Bloated", "Stomach pain", "Gas", "Diarrhea", "Constipation", "Nausea"]
+#Digestion.create!(name: :name)
+#end
+
+#["Pimples", "Eczema"]
+#Skin.create!(name: :name)
+#end
+
+#["Headache", "Asthma"]
+#Body.create!(name: :name)
+#end

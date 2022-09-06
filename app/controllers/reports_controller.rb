@@ -8,6 +8,7 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
     @report_mood = ReportMood.new
+    #@report_feeling = ReportFeeling.new
     @food_item = []
     @food_item_id = []
     @meal_type_name = []

@@ -8,31 +8,29 @@
     <div class="categoryy">
       <div class="carousel-inner">
         <div class="carousel-item active">
+            <%# display the symptoms here %>
+            <%= simple_form_for([@report, @report_feeling]) do |f| %>
+            <%= f.input :feeling_id,
+              as: :check_boxes,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-ms-symp',
+              item_wrapper_class: 'card-ms',
+              input_html: {class: 'card-ms-overview', multiple: true},
+              label_method: ->(feeling) { "<div class=\"square\">#{inline_svg_tag("#{feeling.name}.svg", class: "card-ms-icon")} <p>#{feeling.name}</p></div>".html_safe },
+              collection: Feeling.all %>
+            <%= f.submit "Add symptom", class:"btn btn-primary, ml-3"%>
+            <% end %>
 
- <%# display the symptoms here %>
- <%= simple_form_for([@report, @report_feeling]) do |f| %>
-   <%= f.input :feeling_id,
-            as: :check_boxes,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-ms-symp',
-            item_wrapper_class: 'card-ms',
-            input_html: {class: 'card-ms-overview', multiple: true},
-            label_method: ->(feeling) { "<div class=\"square\">#{inline_svg_tag("#{feeling.name}.svg", class: "card-ms-icon")} <p>#{feeling.name}</p></div>".html_safe },
-            collection: Feeling.all %>
-    <%= f.submit "Add symptom", class:"btn btn-primary, ml-3"%>
-     <% end %>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-  </div>
-  </div>
   </div>

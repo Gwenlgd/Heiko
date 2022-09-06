@@ -98,7 +98,6 @@ td {
 }
 
 .table > thead {
-  display: none;
 }
 
 .day-cal {
@@ -128,7 +127,7 @@ td {
 .day-number {
   color: $black;
   text-decoration: none;
-  font-size: 80px;
+  font-size: 70px;
 }
 
 .day-cal .simple-calendar .today {

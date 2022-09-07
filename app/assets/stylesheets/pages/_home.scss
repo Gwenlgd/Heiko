@@ -101,6 +101,7 @@ flex-direction: column;
 
   p {
     font-size: 20px;
+    font-weight: inherit;
   }
 
   .btn-primary {
@@ -128,4 +129,13 @@ flex-direction: column;
 
 #typed {
     height: 150px;
+}
+
+
+.ts-control {
+  border-radius: 5px;
+}
+
+.carousel-indicators {
+  color: transparent;
 }

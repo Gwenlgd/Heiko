@@ -15,6 +15,7 @@ body {
   p {
     text-align: center;
     color: $black;
+    font-size: 17px;
   }
 }
 .card-ms {
@@ -23,11 +24,10 @@ body {
   margin-bottom: 20px;
 
   .square {
-  height: 160px;
-  width: 130px;
+  height: 140px;
+  width: 120px;
   border-radius: 5px;
   background: $white;
-  margin: 0px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,8 +36,8 @@ body {
 }
 
 .card-ms-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 
     path, circle {
       fill: $green;
@@ -75,9 +75,11 @@ body {
 
     }
   }
-
 }
 
+.square p {
+  margin-bottom: 0px;
+}
 
 .categoryy {
   margin-top: -20px;
@@ -92,29 +94,32 @@ body {
   // content: '<';
   background-image: url('prev.svg');
   margin-left: 25px;
-  height: 24px;
-  width: 24px;
-  right: 37px;
+  height: 25px;
+  width: 25px;
+  right: 20px;
+  bottom: 182px;
   position: absolute;
-  color: $green !important;
 }
 .carousel-control-next-icon {
   // content: '>';
   background-image: url('next.svg');
   margin-right: 25px;
-  height: 24px;
-  width: 24px;
-  left: 37px;
+  height: 25px;
+  width: 25px;
+  left: 20px;
+  bottom: 182px;
   position: absolute;
-  path fill-rule {
-    fill: $green !important;
-  }
+}
+
+.carousel-control-prev, .carousel-control-next {
+  z-index: 0;
 }
 
 // PAGE SHOW OVERIEW DAY - FOOD ITEMS CARDS
 
 .show-food {
   display: flex-start;
+  margin-bottom: 40px;
 
   .square {
     position: relative;
@@ -125,7 +130,12 @@ body {
     color: $black;
     box-shadow: none;
     padding: 5px;
+    padding-right: 20px;
     text-transform: capitalize;
+  }
+
+  h3 {
+    margin: 10px 0px;
   }
 
   form {
@@ -142,6 +152,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
+  margin-left: -15px;
 
   form {
     display: inline-block;
@@ -156,28 +167,43 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 .show-feeling-carousel {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
 .show-mood .card-ms .square {
-  height: 100px;
-  width: 90px;
+  height: 90px;
+  width: 100px;
   padding: 10px 3px 10px 0px;
   position: relative;
   font-size: 90%;
 
   .btn-delete-ms button {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: -5px;
+    right: -6px;
+    background-color: $offwhite;
+    border-radius: 3px;
+    font-size: 10px;
+    color: black;
+    width: 3px;
+    height: 15px;
+    padding-right: 9px;
   }
-
 }
+
+.show-mood .card-ms {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 115px;
+}
+
 
 .no-margin-square {
   margin: 12px !important;
@@ -189,6 +215,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
+  margin-left: -15px;
 
   form {
     display: inline-block;
@@ -197,9 +224,15 @@ body {
   }
 }
 
+.show-feeling .card-ms {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 115px;
+}
+
 .show-feeling .card-ms .square {
-  height: 100px;
-  width: 90px;
+  height: 90px;
+  width: 100px;
   padding: 10px 3px 10px 0px;
   font-size: 90%;
   position: relative;
@@ -210,8 +243,25 @@ body {
 
   .btn-delete-ms button {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: -5px;
+    right: -6px;
+    background-color: $offwhite;
+    border-radius: 3px;
+    font-size: 10px;
+    color: black;
+    width: 3px;
+    height: 15px;
+    padding-right: 9px;
   }
 
+}
+
+.col-form-label {
+  margin-bottom: 40px;
+
+}
+
+.mood-show-h3 {
+
+margin-top: 10px;
 }

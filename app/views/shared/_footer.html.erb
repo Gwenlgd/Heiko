@@ -1,14 +1,17 @@
 <div class="footer">
   <%= link_to dashboard_path do %>
     <%= inline_svg_tag("home.svg", class:"footer-icon")  %>
+    <p>Home</p>
   <% end %>
 
   <%= link_to calendar_path do %>
   <%= inline_svg_tag "calendar.svg", class: "footer-icon" %>
+  <p>Calendar</p>
   <% end %>
 
   <div class="dropup">
      <button class="dropbtn"><%= inline_svg_tag "positive.svg", class: "footer-icon-plus" %></button>
+     <p>Add</p>
     <div class="dropup-content">
       <div class="inner-dropup">
         <div class="inner-feelings">
@@ -68,6 +71,7 @@
   <% else %>
     <%= link_to new_report_path(date: Date.today) do %>
       <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
+      <p>Analysis</p>
     <% end %>
   <% end %>
 
@@ -75,5 +79,6 @@
 
   <%= link_to settings_path do %>
   <%= inline_svg_tag "person.svg", class: "footer-icon" %>
+  <p>Profile</p>
   <% end %>
 </div>

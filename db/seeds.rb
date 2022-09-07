@@ -15,6 +15,7 @@ ReportMood.destroy_all
 ReportFeeling.destroy_all
 Report.destroy_all
 Mood.destroy_all
+Recipe.destroy_all
 User.destroy_all
 FoodItem.destroy_all
 Recipe.destroy_all
@@ -52,7 +53,13 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{row['ingredients']} #{row['id']}"
 end
 
+# RECIPES
 
+puts "Creating recipes..."
+
+carbonara = Recipe.create!(name: "Pasta Carbonara")
+bolognese = Recipe.create!(name: "Pasta Bolognese")
+quinoa = Recipe.create!(name: "Quinoa salad")
 
 # MOODS
 ["Super happy", "Happy", "Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"].each do |name|
@@ -69,7 +76,7 @@ end
 
 # ENERGY CATEGORY 4 items
 ["Energetic", "Tired", "OK", "No energy"].each do |name|
-feeling=Feeling.create!(category: "Energy",name: name)
+feeling = Feeling.create!(category: "Energy",name: name)
 end
 
 # DIGESTION CATEGORY 6 items
@@ -79,7 +86,7 @@ end
 
 
 # SKIN CATEGORY 2 items
-["Pimples", "Eczema"].each do |name|
+["Pimples", "Rash", "Sweating", "Dry skin"].each do |name|
 Feeling.create!(category: "Skin",name: name)
 end
 

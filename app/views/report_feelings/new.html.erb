@@ -6,7 +6,7 @@
 
 <%= simple_form_for([@report, @report_feeling]) do |f| %>
   <fieldset class="mb-3 check_boxes optional report_feeling_feeling_id">
-  <legend class="col-form-label pt-0"> <h4> <center> Symptoms </center> </h4> </legend>
+  <%# <legend class="col-form-label pt-0"> <h4> <center></center> </h4> </legend> %>
   <div class="category-ms-symp">
     <input type="hidden" name="report_feeling[feeling_id][]" value="" autocomplete="off">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">

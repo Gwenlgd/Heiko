@@ -132,7 +132,8 @@ td {
 }
 
 .day-name {
-  font-size: 23px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .day-number {
@@ -169,4 +170,10 @@ td {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+img, svg {
+  vertical-align: middle;
+  height: 360px;
+  width: 360px;
 }

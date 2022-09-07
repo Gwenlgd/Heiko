@@ -6,9 +6,6 @@
 
 <div class="week"><%= render "shared/calendar_week", report: @report %></div>
 <div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
-
-  <h2>Meals</h2>
-
   <div class="show-food">
       <% @report_food_items.each do | group | %>
         <h3><%= @meal_type_name = group[0]  %></h3>
@@ -22,7 +19,9 @@
         <% end %>
   </div>
 
-  <h2>Mood</h2>
+  <div class="mood-show-h3">
+      <h3>Mood</h3>
+    </div>
   <div class="show-mood">
     <% @report.report_moods.each do |report_mood| %>
       <%= simple_form_for [@report, report_mood], method: :delete do |f| %>
@@ -36,7 +35,9 @@
     <% end %>
   </div>
 
-  <h2>Symptoms</h2>
+  <div class="mood-show-h3">
+      <h3>Symptoms</h3>
+    </div>
   <div class="show-feeling">
     <% @report.report_feelings.each do |report_feeling| %>
       <%= simple_form_for [@report, report_feeling], method: :delete do |f| %>
@@ -50,15 +51,17 @@
     <% end %>
   </div>
 
-  <div class="profile-settings">
-    <button class="btn btn-link">
+
+  <div class="other-overview">
+    <button class="btn btn-primary">
       <%= link_to week_path do %>
-      <p>Week overview</p>
+      <p>Week</p>
       <% end %>
     </button>
-      <button class="btn btn-link">
+      <button class="btn btn-primary">
       <%= link_to month_path do %>
-      <p>Month overview</p>
+      <p>Month</p>
+
       <% end %>
     </button>
   </div>

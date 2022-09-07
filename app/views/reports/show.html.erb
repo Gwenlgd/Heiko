@@ -27,7 +27,7 @@
       <%= simple_form_for [@report, report_mood], method: :delete do |f| %>
         <div class="card-ms">
           <div class="square no-margin-square">
-            <%= inline_svg_tag("#{report_mood.mood.name.downcase.parameterize(separator: '_')}.svg", class:"card-ms-icon" )  %>
+            <%= inline_svg_tag("icons/#{report_mood.mood.name.downcase.parameterize(separator: '_')}.svg", class:"card-ms-icon" )  %>
             <div class="btn-delete-ms"><%= report_mood.mood.name %> <button type="submit">X</button> </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
       <%= simple_form_for [@report, report_feeling], method: :delete do |f| %>
         <div class="card-ms">
           <div class="square no-margin-square">
-            <%= inline_svg_tag("#{report_feeling.feeling.name.downcase.parameterize(separator: '_')}.svg", class:"card-ms-icon" )  %>
+            <%= inline_svg_tag("icons/#{report_feeling.feeling.name.downcase.parameterize(separator: '_')}.svg", class:"card-ms-icon" )  %>
             <div class="btn-delete-ms"><%= report_feeling.feeling.name %><button type="submit">X</button> </div>
           </div>
         </div>

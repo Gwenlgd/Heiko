@@ -67,6 +67,7 @@
   <% if user_signed_in? && current_user.reports.find_by(date: Date.today) %>
     <%= link_to report_path(current_user.reports.find_by(date: Date.today)) do %>
       <%= inline_svg_tag "cardiogram.svg", class: "footer-icon" %>
+      <p>Analysis</p>
     <% end %>
   <% else %>
     <%= link_to new_report_path(date: Date.today) do %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/cancel', to: 'pages#cancel_account'
   get '/month', to: 'pages#month_report'
   get '/week', to: 'pages#week_report'
+  get '/api', to: 'pages#jules_api'
 
   # get '/new', to 'pages#new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

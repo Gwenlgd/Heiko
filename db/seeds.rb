@@ -55,11 +55,6 @@ end
 
 # RECIPES
 
-puts "Creating recipes..."
-
-carbonara = Recipe.create!(name: "Pasta Carbonara")
-bolognese = Recipe.create!(name: "Pasta Bolognese")
-quinoa = Recipe.create!(name: "Quinoa salad")
 
 # MOODS
 ["Super happy", "Happy", "Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"].each do |name|

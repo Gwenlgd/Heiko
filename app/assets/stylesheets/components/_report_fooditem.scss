@@ -9,21 +9,24 @@
 .btn-submit-report {
   margin-top: 5px;
   position: relative;
-  width: 105px;
+  width: 100px;
   height: 40px;
   background-color: $green;
   text-align: center;
   border-radius: 5px;
   border-color: $green;
-  color: $white;
+  color: $black;
   box-shadow: none;
+  font-weight: 200;
 }
+
+
 
 .btn-submit-report:hover {
   background-color: $white;
   transition-duration: 0.5s;
   border-color: $green;
-  color: $green;
+  color: $black;
 }
 
 .recent-fooditem {
@@ -64,7 +67,7 @@
   border-radius: 5px;
   color: $black;
   box-shadow: none;
-  padding: 8px;
+  padding: 8px 10px;
 }
 
 // .tag-selector:checked + label

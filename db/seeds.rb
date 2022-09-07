@@ -79,7 +79,7 @@ end
 
 
 # SKIN CATEGORY 2 items
-["Pimples", "Eczema"].each do |name|
+["Pimples", "Rash", "Sweating", "Dry skin"].each do |name|
 Feeling.create!(category: "Skin",name: name)
 end
 

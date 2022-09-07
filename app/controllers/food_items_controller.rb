@@ -6,6 +6,7 @@ class FoodItemsController < ApplicationController
   end
 
   def show
+
   end
 
   private

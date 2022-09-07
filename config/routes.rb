@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :recipes
 
+  resources :recipe_food_items
+
   resources :reports, except: [:index] do
     resources :report_food_items
     resources :report_moods

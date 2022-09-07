@@ -1,0 +1,11 @@
+<%#  PATH: new_recipe_food_item %>
+<%# URL: /recipe_food_items/new %>
+
+<h2>Add ingredients to <%=  %></h2>
+    <div class="add-fooditem-recipe">
+      <%= simple_form_for [@recipe, @recipe_food_item] do |f| %>
+      <%= f.association :food_item, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, inline_label: 'Choose', label: false %>
+
+        <%= f.button :submit, "Add", class:"btn-submit-report-recipe"   %>
+        <% end %>
+    </div>

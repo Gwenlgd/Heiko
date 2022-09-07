@@ -1,0 +1,15 @@
+<%# URL : /recipes   %>
+<%# PATH recipes %>
+
+
+<h3>INDEX RECIPES</h3>
+
+<p><%= link_to "Add a recipe", new_recipe_path %></p>
+
+    <div>
+      <% @recipes.each do | recipe | %>
+        <%= link_to recipe_path(recipe) do %>
+          <ul><%= recipe.name %></ul>
+        <% end %>
+      <% end %>
+    </div>

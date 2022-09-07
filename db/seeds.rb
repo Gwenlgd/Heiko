@@ -52,6 +52,8 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{row['ingredients']} #{row['id']}"
 end
 
+
+
 # MOODS
 ["Super happy", "Happy", "Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"].each do |name|
   Mood.create!(name: name)

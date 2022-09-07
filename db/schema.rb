@@ -27,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_080123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "nutrients"
-    t.index ["recipe_id"], name: "index_food_items_on_recipe_id"
   end
 
   create_table "moods", force: :cascade do |t|

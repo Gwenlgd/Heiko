@@ -24,7 +24,7 @@
                 <input class="form-check-input check_boxes optional card-ms-overview" type="checkbox" value="<%= mood.id %>" name="report_mood[mood_id][]" id="report_mood_mood_id_<%= mood.id %>">
                 <label class="form-check-label collection_check_boxes" for="report_mood_mood_id_<%= mood.id %>">
                   <div class="square">
-                    <%= inline_svg_tag("#{mood.name}.svg", class: "card-ms-icon") %>
+                    <%= inline_svg_tag("#{mood.name.downcase}.svg", class: "card-ms-icon") %>
                     <p><%= mood.name %></p>
                   </div>
                 </label>
@@ -39,7 +39,7 @@
                 <input class="form-check-input check_boxes optional card-ms-overview" type="checkbox" value="<%= mood.id %>" name="report_mood[mood_id][]" id="report_mood_mood_id_<%= mood.id %>">
                 <label class="form-check-label collection_check_boxes" for="report_mood_mood_id_<%= mood.id %>">
                   <div class="square">
-                    <%= inline_svg_tag("#{mood.name}.svg", class: "card-ms-icon") %>
+                    <%= inline_svg_tag("#{mood.name.downcase}.svg", class: "card-ms-icon") %>
                     <p><%= mood.name %></p>
                   </div>
                 </label>

@@ -26,7 +26,7 @@
                   <input class="form-check-input check_boxes optional card-ms-overview" type="checkbox" value="<%= feeling.id %>" name="report_feeling[feeling_id][]" id="report_feeling_feeling_id_<%= feeling.id %>">
                   <label class="form-check-label collection_check_boxes" for="report_feeling_feeling_id_<%= feeling.id %>">
                     <div class="square">
-                      <%= inline_svg_tag("#{feeling.name}.svg", class: "card-ms-icon") %>
+                      <%= inline_svg_tag("#{feeling.name.downcase}.svg", class: "card-ms-icon") %>
                       <p><%= feeling.name %></p>
                     </div>
                   </label>

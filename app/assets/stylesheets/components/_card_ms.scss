@@ -130,6 +130,7 @@ body {
     color: $black;
     box-shadow: none;
     padding: 5px;
+    padding-right: 20px;
     text-transform: capitalize;
   }
 
@@ -189,11 +190,11 @@ body {
     right: -6px;
     background-color: $offwhite;
     border-radius: 3px;
-    font-size: 5px;
+    font-size: 10px;
     color: black;
-    width: 0px;
-    height: 8px;
-    padding-right: 8px;
+    width: 3px;
+    height: 15px;
+    padding-right: 9px;
   }
 }
 
@@ -246,11 +247,11 @@ body {
     right: -6px;
     background-color: $offwhite;
     border-radius: 3px;
-    font-size: 5px;
+    font-size: 10px;
     color: black;
-    width: 0px;
-    height: 8px;
-    padding-right: 8px;
+    width: 3px;
+    height: 15px;
+    padding-right: 9px;
   }
 
 }

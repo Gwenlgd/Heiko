@@ -26,11 +26,8 @@
     <% if report %>
       <p>You are doing greet, keep loggin and HEIKO will soon give you an report.</p>
     <% else %>
-    <p>You haven't logged anything yet today. <br>
-    Add your first item, so HEIKO can help you better.</p>
-    <% end %>
-      <%= link_to reports_path do %>
-    <%= inline_svg_tag "chevron-down-solid.svg", class: "footer-icon-dashboard" %>
+      <p>You haven't logged anything yet today. <br>
+      Add your first item, so HEIKO can help you better.</p>
     <% end %>
   </div>
 </div>

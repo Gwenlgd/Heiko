@@ -22,11 +22,12 @@
 
   <% report = Report.find_by(user: current_user, date: Date.today) %>
   <div class="dashboard-container">
-    <h2 class="dashboard-content">Welcome <%= current_user.first_name %>,</h2>
+    <h2 class="dashboard-content">Hi <%= current_user.first_name %>,</h2>
     <% if report %>
-      <p>Showed there is a report</p>
+      <p>You are doing greet, keep loggin and HEIKO will soon give you an report.</p>
     <% else %>
-    <p>Showed when no report</p>
+    <p>You haven't logged anything yet today. <br>
+    Add your first item, so HEIKO can help you better.</p>
     <% end %>
       <%= link_to reports_path do %>
     <%= inline_svg_tag "chevron-down-solid.svg", class: "footer-icon-dashboard" %>

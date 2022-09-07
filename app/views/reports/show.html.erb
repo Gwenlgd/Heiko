@@ -6,7 +6,6 @@
 
 <div class="week"><%= render "shared/calendar_week", report: @report %></div>
 <div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
-  <h2></h2>
   <div class="show-food">
       <% @report_food_items.each do | group | %>
         <h3><%= @meal_type_name = group[0]  %></h3>
@@ -55,12 +54,12 @@
 
   <div class="other-overview">
     <button class="btn btn-primary">
-      <%= link_to new_user_session_path do %>
+      <%= link_to week_path do %>
       <p>Week</p>
       <% end %>
     </button>
-      <button class="btn btn-secondary">
-      <%= link_to new_user_session_path do %>
+      <button class="btn btn-primary">
+      <%= link_to month_path do %>
       <p>Month</p>
 
       <% end %>

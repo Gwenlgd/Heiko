@@ -87,4 +87,3 @@ gem 'inline_svg'
 
 
 # Spoonacular
-gem

@@ -18,12 +18,57 @@ class PagesController < ApplicationController
   end
 
   def week_report
+    @mood_count = ReportMood
+                    .joins(:report)
+                    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_week, Date.today.end_of_week, 15)
+                    .group(:mood_id)
+                    .count
+    # I: Filter just the mood that occurs more than equal to 2 times a week
+    @mood_count_often = @mood_count.select { |key, value| value >= 2 }
+
+    # Find the report related to this mood and the food they consume on those days
+     @food_consumed_mood = Report
+                      .where(id: ReportMood.where(mood_id: @mood_count_often.keys).pluck(:report_id))
+                      .joins(:report_food_items)
+                      .group(:food_item_id)
+                      .count
+    # I: top food consumed most when the mood occurs
+    @top_food_consumed_mood = @food_consumed_mood.sort_by { |key, value| -value }.to_h
+
+
+    # To get the symptoms and foods of user in the past 7 days
+    @feeling_count = ReportFeeling
+                    .select('feelings.id')
+                    .joins(:feeling, :report)
+                    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_week, Date.today.end_of_week, current_user.id)
+                    .group('feelings.id')
+                    .map { |report_feeling| ReportFeeling.find(report_feeling.id) }
+    @food_problem = ReportFoodItem
+                    .where()
+
+
+    # I: Filter just the symptom that occurs more than equal to 2 times a week
+    # @feeling_count_often = @feeling_count.select { |key, value| value >= 2 }
+
+    # Find the report related to this symptom and the food they consume on those days
+    @food_consumed_feeling = Report
+                            .where(id: ReportFeeling.where(feeling_id: @feeling_count_often.keys).pluck(:report_id))
+                            .joins(:report_food_items)
+                            .group(:food_item_id)
+                            .count
+
+    # I: top food consumed most when the symptom occurs
+    @top_food_consumed_feeling = @food_consumed_feeling.sort_by { |key, value| -value }.to_h
+  end
+
+  def month_report
 
     @mood_count = ReportMood
                     .joins(:report)
                     .where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15)
                     .group(:mood_id)
                     .count
+
     # I: Filter just the mood that occurs more than equal to 2 times a week
     @mood_count_often = @mood_count.select { |key, value| value >= 2 }
 
@@ -36,8 +81,24 @@ class PagesController < ApplicationController
 
     # I: top food consumed most when the mood occurs
     @top_food_consumed_mood = @food_consumed_mood.sort_by { |key, value| -value }.to_h
+  end
+end
 
-    # link food item and intolerances in common
+# grouped_moods = {
+#   "Good" => ["Super happy", "Happy"],
+#   "Bad" => ["Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"]
+# }
+
+# Food to Avoid -> FoodItem in a week's report that produced a bad feeling
+# Happy food -> FoodItem in a week's report that produced a good feeling
+
+# result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving Apple&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
+# Carbs
+# Fat
+# Protein
+# Fiber
+# Sugar
+# link food item and intolerances in common
     # @food_consumed.each do |key, value|
       # @intolerance =
 
@@ -59,34 +120,3 @@ class PagesController < ApplicationController
     # result = ReportFoodItem.joins(:report).where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15).joins('INNER JOIN report_moods AS rm ON rm.report_id = repo
     #   rts.id').select('report_food_items.food_item_id, reports.id, rm.mood_id')
   # end
-
-    # To get the symptoms and foods of user in the past 7 days
-    @feeling_count = ReportFeeling
-                    .joins(:report)
-                    .where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15)
-                    .group(:feeling_id)
-                    .count
-
-    # I: Filter just the symptom that occurs more than equal to 2 times a week
-    @feeling_count_often = @feeling_count.select { |key, value| value >= 2 }
-
-    # Find the report related to this symptom and the food they consume on those days
-    @food_consumed_feeling = Report
-    .where(id: ReportFeeling.where(feeling_id: @feeling_count_often.keys).pluck(:report_id))
-    .joins(:report_food_items)
-    .group(:food_item_id)
-    .count
-
-    # I: top food consumed most when the symptom occurs
-    @top_food_consumed_feeling = @food_consumed_feeling.sort_by { |key, value| -value }.to_h
-
-  end
-end
-
-
-# result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving Apple&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
-# Carbs
-# Fat
-# Protein
-# Fiber
-# Sugar

@@ -1,18 +1,14 @@
-
-
 <div class="week-view-report">
- <h3><%= Date.today.beginning_of_week.strftime("#{Date.today.beginning_of_week.day.ordinalize} %B") %> - <%= Date.today.end_of_week.strftime("#{Date.today.end_of_week.day.ordinalize} %B") %></h3>
-
-
+<%= Date.today.beginning_of_week.strftime("%B") %>
+ <h3><%= Date.today.beginning_of_week.strftime("#{Date.today.beginning_of_week.day.ordinalize}") %> - <%= Date.today.end_of_week.strftime("#{Date.today.end_of_week.day.ordinalize}") %></h3>
 
   <div class="best-bad-day">
     <div class="best-day">
       <p>Best Day</p>
       <a> <%= @best_day.nil? ? '-' : @best_day.date.strftime("%a") %> </a>
     </div>
-
     <div class="bad-day">
-      <p>Worst Day</p>
+      <p>Bad Day</p>
        <a> <%= @worst_day.nil? ? '-' : @worst_day.date.strftime("%a") %> </a>
     </div>
   </div>
@@ -21,14 +17,13 @@
     <div class="food-to-avoid">
       <h2>Food to avoid</h2>
       <% @bad_foods.each do |food| %>
-        </p><%= food.name %></p>
-
+        <p><%= food.name %></p>
       <% end %>
     </div>
     <div class="food-to-avoid">
       <h2>Happy food</h2>
       <% @good_foods.each do |food| %>
-        </p><%= food.name %></p>
+        <p><%= food.name %></p>
 
       <% end %>
     </div>
@@ -42,7 +37,7 @@
             <div class="suggest">
               <h2>Most symptoms</h2>
               <% @popular_feelings.each do |key, value| %>
-                </p><%= key %> happens <%= value %> times</p>
+                <p><%= key %> happens <%= value %> times</p>
                   <% end %>
             </div>
           </div>
@@ -51,10 +46,6 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Most moods</h2>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
             </div>
           </div>
       </div>
@@ -62,10 +53,12 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Happy days</h2>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
+              <p>2 august - 1 Symptom</p>
+              <p>3 august - 0 Symptoms </p>
+              <p>9 august - 0 Symptoms</p>
+              <p>18 august - 1 Symptom</p>
+              <p>23 august - 0 Symptoms</p>
+              <p>31 august - 1 Symptom </p>
             </div>
           </div>
       </div>
@@ -73,10 +66,10 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Bad days</h2>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
+              <p>4 august - 4 Symptoms</p>
+              <p>16 august - 3 Symptoms </p>
+              <p>21 august - 3 Symptoms</p>
+              <p>16 august - 5 Symptoms</p>
             </div>
           </div>
       </div>

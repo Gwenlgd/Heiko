@@ -154,4 +154,15 @@ end
 
     # result = ReportFoodItem.joins(:report).where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15).joins('INNER JOIN report_moods AS rm ON rm.report_id = repo
     #   rts.id').select('report_food_items.food_item_id, reports.id, rm.mood_id')
+<<<<<<< HEAD
   # end
+=======
+  end
+#end
+# result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving Apple&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
+# Carbs
+# Fat
+# Protein
+# Fiber
+# Sugar
+>>>>>>> master

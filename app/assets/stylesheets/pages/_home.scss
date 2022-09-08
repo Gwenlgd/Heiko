@@ -151,7 +151,7 @@ position: relative;
     border-radius: 22px;
     box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
     cursor: pointer;
-    top: 6px;
+    top: 70px;
     right: -180px;
   }
 
@@ -162,6 +162,57 @@ position: relative;
     position: absolute;
     top:2px;
     left:2px;
+    background: $offwhite;
+    border-radius: 47px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  }
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  input:checked + label {
+    background: $offwhite;
+  }
+  input:checked + label:after {
+    left:42px;
+    transform: translateX(-100%);
+    background: $green;
+  }
+  label, label:after {
+    transition: 0.5s
+  }
+  label:active:after{
+    width: 26px;
+  }
+}
+
+.not-mode-button {
+  position: absolute;
+  left: 10px;
+  bottom: 171px;
+
+  label {
+    width:45px;
+    height: 25px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 22px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    top: 135px;
+    right: -275px;
+  }
+
+  label:after {
+    content: "";
+    width:22px;
+    height:21px;
+    position: absolute;
+    top:2px;
+    left:20px;
     background: #BEDAD2;
     border-radius: 47px;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);

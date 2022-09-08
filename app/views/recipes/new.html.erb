@@ -1,13 +1,25 @@
 <%# PATH new_recipe %>
 
 <div class="add-recipe">
-  <%= simple_form_for @recipe do |f| %>
+  <div class="add-recipe-form">
+    <%= simple_form_for @recipe do |f| %>
     <div class="name-recipe">
-      <%= f.input :name %>
+      <h3><%= f.input :name %></h3>
     </div>
       <div class="add-fooditem-recipe">
+          <div class="ingredients-recipe">
+            <h3>Ingredients</h3>
+          </div>
         <%= f.association :recipe_food_items, collection: FoodItem.all, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, inline_label: 'Choose', label: false %>
       </div>
-      <%= f.button :submit, "Add", class:"btn-submit-report-recipe" %>
-  <% end %>
+  </div>
+  <div class="other-overview">
+    <div class="add-fooditem-recipe-btn">
+        <%= f.button :submit, "Add", class:"btn btn-primary" %>
+      <% end %>
+      <button class="btn btn-secondary">
+        <%= link_to "Back", recipes_path %>
+      </button>
+    </div>
+  </div>
 </div>

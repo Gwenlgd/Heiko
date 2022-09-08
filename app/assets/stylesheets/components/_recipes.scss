@@ -1,18 +1,119 @@
-.add-recipe {
-  margin: 20px;
-}
+// INDEX RECIPES
 
-.name-recipe {
-  .form-control {
-    width: 100%;
-    border: 1px solid #d0d0d0;
-    color: #d0d0d0;
-    padding: 0px 33px 0px 0px;
+  .button-recipe-index {
+    margin: 20px 0px 20px 118px;
+  }
+
+.category-recipe {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+
+}
+.card-ms-recipe {
+  display: inline-block;
+  margin-bottom: 20px;
+
+    .square-recipe {
+    margin: 10px 8px 10px 8px;
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    background: $offwhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px, rgba(0, 0, 0, 0.10) 0px 8px 16px -8px;
+
+    p {
+      text-align: center;
+      align-content: center;
+      padding-top: 11px;
+      color: $black;
+      font-size: 17px;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
   }
 }
 
 
+// NEW PAGE RECIPE
+
+.add-recipe {
+  margin: 10px;
+
+  .add-recipe-form {
+    margin-left: 15px;
+  }
+}
+
+.ingredients-recipe {
+  margin: 30px 0px 30px 0px;
+}
+.name-recipe .form-control {
+  width: 301px;
+  border: 1px solid #d0d0d0;
+  color: #d0d0d0;
+  margin-left: 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 17px;
+  height: 35px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
 .add-fooditem-recipe {
   margin-top: 20px;
+  .ts-control {
+    height: 38px;
+  }
+}
 
+.add-fooditem-recipe-btn {
+  margin-top: 50px;
+  margin-left: -20px;
+}
+
+
+// SHOW PAGE RECIPE
+
+.cards-recipes {
+  h2 {
+    font-weight: 600;
+  }
+  h3 {
+    margin-top: 30px;
+  }
+}
+.recipes-food-items {
+  display: flex-start;
+  // justify-content: center;
+
+    margin: 20px 0px 20px 0px;
+
+    .square {
+      padding-right: 20px;
+      text-transform: capitalize;
+      display: inline-block;
+      margin: 4px 4px 4px 0px;
+      padding: 1px;
+
+        .recipes-food-name {
+          margin: 3px;
+          display: inline-block;
+          background-color: $offwhite;
+          border-radius: 5px;
+          border-color: $offwhite;
+          color: $black;
+          box-shadow: none;
+          padding: 6px;
+        }
+    }
+
+    h3 {
+      margin: 10px 0px;
+    }
 }

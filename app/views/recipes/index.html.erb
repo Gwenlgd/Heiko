@@ -2,14 +2,20 @@
 <%# PATH recipes %>
 
 
-<h3>INDEX RECIPES</h3>
-
-<p><%= link_to "Add a recipe", new_recipe_path %></p>
-
-    <div>
-      <% @recipes.each do | recipe | %>
-        <%= link_to recipe_path(recipe) do %>
-          <ul><%= recipe.name %></ul>
-        <% end %>
-      <% end %>
-    </div>
+<h2>Your Recipes</h2>
+  <div class="button-recipe-index">
+    <button class="btn btn-primary">
+      <%= link_to "Add A Recipe", new_recipe_path %>
+    </button>
+  </div>
+  <div class="category-recipe">
+    <% @recipes.each do | recipe | %>
+      <div class="card-ms-recipe">
+        <div class="square-recipe">
+          <%= link_to recipe_path(recipe) do %>
+          <p><%= recipe.name %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>

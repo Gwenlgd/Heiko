@@ -10,12 +10,13 @@
   </div>
   <div class="category-recipe">
     <% @recipes.each do | recipe | %>
-          <%= link_to recipe_path(recipe) do %>
-        <div class="card-ms-recipe">
-          <div class="square-recipe">
-          <p><%= recipe.name %></p>
-            </div>
-          </div>
-          <% end %>
-    <% end %>
+    <div class="card-recipe-name">
+            <%= link_to recipe_path(recipe) do %>
+            <h2><%= recipe.name %></h2>
+            <% end %>
+              <% recipe.food_items.each do | food_item | %>
+                  <p><%= food_item.name.capitalize %></p>
+              <% end %>
+    </div>
+      <% end %>
   </div>

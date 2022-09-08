@@ -78,20 +78,26 @@
 //   }
 // }
 
-
-// NEW PAGE RECIPE
 .addrecipe-report {
+
+  h3 {
+    margin: 30px 0px 20px 17px;
+  }
 
   a {
     text-decoration: none !important;
     padding-left: 4px;
+    color: $black;
   }
 
   ul {
     list-style-type: none;
+    margin-left: -14px;
   }
 
 }
+
+// NEW PAGE RECIPE
 .add-recipe {
   margin: 10px;
 

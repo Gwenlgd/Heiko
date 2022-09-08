@@ -34,6 +34,7 @@ april = User.create!(first_name: "April", last_name: "D.", email: "aprild@test.c
 silvia = User.create!(first_name: "Silvia", last_name: "P.", email: "silviap@test.com", password: "paradise", age: 29, gender: "Women")
 bodil = User.create!(first_name: "Bodil", last_name: "E.", email: "bodile@test.com", password: "paradise", age: 29, gender: "Women")
 franka = User.create!(first_name: "Franka", last_name: "S.", email: "franka@test.com", password: "paradise", age: 29, gender: "Women")
+Gaby = User.create!(first_name: "Gaby", last_name: "van den Born", email: "gabyvdborn@gmail.com", password: "paradise", age: 33, gender: "Women")
 
 #men
 gabriel = User.create!(first_name: "Gabriel", last_name: "C.", email: "gabrielc@test.com", password: "paradise", age: 29, gender: "Men")
@@ -84,11 +85,13 @@ end
 
 # RECIPES
 
-puts "Creating recipes..."
+# jules test
+# puts "Creating recipes..."
 
-carbonara = Recipe.create!(name: "Pasta Carbonara", user: User.first)
-bolognese = Recipe.create!(name: "Pasta Bolognese", user: User.first)
-quinoa = Recipe.create!(name: "Quinoa salad", user: User.first)
+# carbonara = Recipe.create!(name: "Pasta Carbonara", user: User.first)
+# bolognese = Recipe.create!(name: "Pasta Bolognese", user: User.first)
+# quinoa = Recipe.create!(name: "Quinoa salad", user: User.first)
+
 
 # MOODS
 ["Super happy", "Happy", "Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"].each do |name|

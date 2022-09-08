@@ -1,6 +1,6 @@
 
   <div class="profile">
-    <%= inline_svg_tag "person.svg", id: "profile-pic" %>
+    <%= image_tag "profilephoto.png", id: "profile-pic" %>
     <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
     <p><%= current_user.email %></p>
     <div class="logout">
@@ -26,15 +26,16 @@
     <% end %>
   </button>
 
-  <button class="btn btn-link">
-    <%= link_to new_user_session_path do %>
-    <p>Dark Mode</p>
-    <% end %>
+  <button class="btn btn-link" >
+    <p>Dark mode</p>
   </button>
 
-  <button class="btn btn-link">
+
+
+  <button  class="btn btn-link" >
     <%= link_to new_user_session_path do %>
-    <p>Help</p>
+    <p>Notification</p>
+
     <% end %>
   </button>
 
@@ -45,3 +46,10 @@
   </button>
   </div>
 <br>
+
+<div class="profile-settings">
+<div class="dark-mode-button">
+  <input type="checkbox" id="darkmode-toggle" onclick="myFunction()"/>
+  <label for="darkmode-toggle">
+</div>
+</div>

@@ -2,14 +2,32 @@
 <%# PATH: recipe %>
 
 
-<h3>SHOW RECIPES</h3>
 
-<div>
-
+<div class="cards-recipes">
   <h2><%= @recipe.name %></h2>
-  <p><% @recipe.food_items.each do |food_item| %></p>
-    <ul><%= food_item.name %></ul>
-  <% end %>
+  <h3>Ingredients : </h3>
+  <div class="recipes-food-items">
+    <div class="square">
+      <% @recipe.food_items.each do |food_item| %>
+        <div class="recipes-food-name">
+        <%= food_item.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div> <%= link_to "Back to the list", recipes_path %> </div>
+  <div class="other-overview">
+    <button class="btn btn-primary">
+      <%= link_to "Edit", recipes_path %>
+    </button>
+
+    <button class="btn btn-primary">
+      <%= link_to "Delete", recipes_path %>
+    </button>
+  </div>
+  <div class="other-overview">
+    <button class="btn btn-secondary">
+      <%= link_to "Back", recipes_path %>
+    </button>
+  </div>

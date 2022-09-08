@@ -11,7 +11,7 @@
   border: none;
   table {
     border-collapse: separate;
-    border-spacing: 10px;
+    border-spacing: 7px;
     table-layout: fixed;
     border: none;
   }
@@ -134,6 +134,7 @@ td {
 .day-name {
   font-size: 20px;
   font-weight: 400;
+  margin-top: 15px;
 }
 
 .day-number {
@@ -143,7 +144,7 @@ td {
 }
 
 .day-cal .simple-calendar .today {
-  font-size: 100px;
+  font-size: 90px;
   background-color: transparent;
   border-radius: 30px;
   width: 30px;

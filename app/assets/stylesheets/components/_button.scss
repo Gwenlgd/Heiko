@@ -15,7 +15,6 @@ font-weight: 400;
 }
 
 .btn-primary a {
-
   color: $black;
   text-decoration: none;
 }
@@ -24,12 +23,6 @@ font-weight: 400;
   margin-bottom: 0px;
 }
 
-.btn-primary:hover {
-  background-color: $white;
-  transition-duration: 0.5s;
-  border-color: $green;
-  color: $black;
-}
 
 .btn-secondary {
 position: relative;
@@ -46,14 +39,12 @@ font-weight: 400;
 }
 
 .btn-secondary a {
-
   color: $black;
   text-decoration: none;
 }
 
 .btn-secondary p {
   margin-bottom: 0px;
-  color: $black;
 }
 
 .btn-secondary:hover {
@@ -86,10 +77,15 @@ font-weight: 400;
   text-decoration: none;
 }
 
+.btn-link:hover{
+  border: none;
+}
+
 .btn-link p {
   margin-bottom: 0px;
   text-decoration: none;
   margin-left: 18px;
+  color: black;
 }
 
 

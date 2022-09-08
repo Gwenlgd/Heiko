@@ -6,3 +6,58 @@ $gray: #0E0000;
 $white: #FFFFFF;
 $offwhite: #F3F7F6;
 $black: #1B1E1D;
+
+*, *:after, *:before {
+  color: inherit;
+}
+
+.dark-mode {
+  background-color: #7D8C87;
+}
+
+.dark-mode p {
+  color: #F3F7F6;
+}
+
+.dark-mode h1 {
+  color: #F3F7F6;
+}
+
+.dark-mode h2 {
+  color: #F3F7F6;
+}
+
+.dark-mode button {
+  background-color: #7D8C87;
+  border-color: #F3F7F6;
+}
+
+.dark-mode button p {
+  background-color: #7D8C87;
+  border-color: #F3F7F6;
+  color: white;
+}
+
+.dark-mode .container-fluid {
+  background-color: #7D8C87;
+}
+
+.dark-mode .navbar-heiko {
+  background-color: #7D8C87;
+
+}
+
+.dark-mode .btn-link {
+  background-color: #7D8C87;
+  color: #F3F7F6;
+}
+
+.dark-mode .footer {
+  background-color: #7D8C87;
+}
+
+.dark-mode .footer p {
+  color: white;
+}
+
+

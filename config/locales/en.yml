@@ -32,6 +32,6 @@
 en:
   hello: "Hello world"
   simple_calendar:
-    previous: "<<"
-    next: ">>"
-    week: Woche
+    previous: "<"
+    next: ">"
+    week: Week

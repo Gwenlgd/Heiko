@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     # @data = JSON.parse(user_serialized)
     #@food_items = FoodItem.where.not(nutrients: nil)
   #end
+  
   def week_report
     @bad_foods = []
     @good_foods = []

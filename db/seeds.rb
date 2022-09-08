@@ -108,22 +108,22 @@ end
 
 # ENERGY CATEGORY 4 items
 ["Energetic", "Tired", "OK", "No energy"].each do |name|
-feeling = Feeling.create!(category: "Energy",name: name)
+feeling = Feeling.create!(category: "Energy", name: name)
 end
 
 # DIGESTION CATEGORY 6 items
 ["Bloated", "Stomach pain", "Gas", "Constipation"].each do |name|
-Feeling.create!(category: "Digestion",name: name)
+Feeling.create!(category: "Digestion", name: name)
 end
 
 
 # SKIN CATEGORY 2 items
 ["Pimples", "Rash", "Sweating", "Dry skin"].each do |name|
-Feeling.create!(category: "Skin",name: name)
+Feeling.create!(category: "Skin", name: name)
 end
 
 
 # ILLNESS CATEGORY 2 items
 ["Headache", "Asthma", "Diarrhea", "Nausea"].each do |name|
-Feeling.create!(category: "Illness",name: name)
+Feeling.create!(category: "Illness", name: name)
 end

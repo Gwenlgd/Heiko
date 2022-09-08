@@ -26,10 +26,11 @@
     <% end %>
   </button>
 
-  <button class="btn btn-link" onclick="myFunction()" >
-    <p><input type="checkbox" id="darkmode-toggle"/>
-      <label for="darkmode-toggle">Dark Mode</p>
+  <button class="btn btn-link" >
+    <p>Dark mode</p>
   </button>
+
+
 
   <button  class="btn btn-link" >
     <%= link_to new_user_session_path do %>
@@ -45,3 +46,10 @@
   </button>
   </div>
 <br>
+
+<div class="profile-settings">
+<div class="dark-mode-button">
+  <input type="checkbox" id="darkmode-toggle" onclick="myFunction()"/>
+  <label for="darkmode-toggle">
+</div>
+</div>

@@ -135,7 +135,22 @@ font-weight: 400;
   display: flex;
   justify-content: center;
   margin-top: auto;
+  min-height: 100px;
   .btn-primary {
     margin: 8px;
   }
+}
+
+.form-actions .btn-secondary {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 5px;
+
+  color: rgb(180, 180, 180);
+  box-shadow: none;
+  text-decoration: none !important;
+  font-weight: 400;
 }

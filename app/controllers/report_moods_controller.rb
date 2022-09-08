@@ -2,7 +2,8 @@ class ReportMoodsController < ApplicationController
   before_action :set_report_mood, only: :destroy
 
   def show
-    @moods = ReportMood.mood.name
+    # @moods = ReportMood.mood.name CAREFUL LINE BREAK (Gwen)
+    @moods = ReportMood.name
   end
 
   def new

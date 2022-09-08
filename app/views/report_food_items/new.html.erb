@@ -4,15 +4,19 @@
 
 
 <div class="food_page">
-  <h2>Add <%= @report.meal_type %></h2>
+  <h2><%= @report.meal_type %></h2>
 
   <div class="addrecipe-report">
-  <h3>Recipes</h3>
+  <%= link_to recipes_path do %>
+  <h3>Your Recipes</h3>
+  <% end %>
+
     <ul>
     <% @recipes.each do |recipe| %>
-    <li><%= link_to recipe.name, report_add_recipe_path(@report, recipe), data: {turbo_method: :post} %></li>
+    <li><%=  link_to recipe.name, report_add_recipe_path(@report, recipe), data: {turbo_method: :post} %></li>
     <% end %>
     </ul>
+
   </div>
     <div class="add-fooditem">
       <h3>Ingredients</h3>

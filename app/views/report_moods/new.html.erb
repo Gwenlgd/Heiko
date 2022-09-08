@@ -5,6 +5,11 @@
 <div class="day-cal-report"><%= render "shared/calendar_day_name", report: @report %></div>
 
  <%# display the moods here %>
+
+<% @moods.each do |mood| %>
+<ul><%= mood.name %></ul>
+<% end %>
+
 <%= simple_form_for([@report, @report_mood]) do |f| %>
   <fieldset class="mb-3 check_boxes optional report_mood_mood_id">
   <legend class="col-form-label pt-0"> <h4> <center></center> </h4> </legend>

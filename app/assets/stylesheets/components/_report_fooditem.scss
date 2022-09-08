@@ -74,11 +74,12 @@
 
 .form-check-input + label {
   cursor: pointer;
-  background-color: $offwhite;
   border-radius: 5px;
-  color: $black;
+  color: #1B1E1D;
   box-shadow: none;
   padding: 8px 10px;
+  margin-left: 16px;
+  margin-top: 13px;
 }
 
 // .tag-selector:checked + label

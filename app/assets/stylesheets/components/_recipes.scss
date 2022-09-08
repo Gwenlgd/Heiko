@@ -118,22 +118,11 @@
   font-size: 17px;
   height: 35px;
   border-radius: 5px;
-  margin-top: 15px;
+  margin-top: 5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;       /* Remove default arrow */
   background-image: url(...);
-}
-.add-fooditem-recipe {
-  margin-top: 20px;
-  .ts-control {
-    height: 38px;
-  }
-}
-
-.add-fooditem-recipe-btn {
-  margin-top: 50px;
-  margin-left: -20px;
 }
 
 
@@ -151,8 +140,6 @@
     -moz-padding-start: 2px;
     appearance: none;       /* Remove default arrow */
     background-image: url(...);   /* Add custom arrow */
-    color: #555;
-    font-size: inherit;
     margin: 0;
     overflow: hidden;
     padding-top: 2px;
@@ -161,13 +148,13 @@
     white-space: nowrap;
     width: 301px;
     border: 1px solid #d0d0d0;
-    color: #d0d0d0;
+    color: $black;
     margin-left: 0px;
     padding: 0px 0px 0px 0px;
     font-size: 17px;
     height: 35px;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 5px;
 
 
 
@@ -241,3 +228,23 @@
       margin: 10px 0px;
     }
 }
+
+.add-fooditem-recipe-btn {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    margin-top: 80px;
+
+    button.btn.btn-secondary {
+      margin: 8px;
+    }
+
+    input.btn.btn.btn-primary{
+      margin: 8px;
+    }
+  }
+
+  .new-rep-container {
+    margin-top: 15px;
+  }

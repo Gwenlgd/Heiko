@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show]
 
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def show
@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, recipe_food_items_attributes: [food_item: []])
+    params.require(:recipe).permit(:name, :meal_type, recipe_food_items_attributes: [food_item: []])
   end
 
   def set_recipe

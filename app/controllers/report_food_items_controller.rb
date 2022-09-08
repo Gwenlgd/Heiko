@@ -10,7 +10,8 @@ class ReportFoodItemsController < ApplicationController
     @report_food_item = ReportFoodItem.new
     @food_items = FoodItem.all
     @report = Report.find(params[:report_id])
-    @recent_report_food_item = ReportFoodItem.joins(:report).where(meal_type: @report.meal_type, report: { user_id: current_user.id }).order(created_at: :desc).limit(10)
+    @recent_food_items = FoodItem.joins(report_food_items: :report).where(report: { user_id: current_user.id, meal_type: @report.meal_type }).distinct.order(created_at: :desc).limit(10)
+    @recipes = current_user.recipes.where(meal_type: @report.meal_type)
   end
 
 

@@ -2,19 +2,34 @@
 <%# URL : /reports/:report_id/report_food_items/new%>
 <%# http://localhost:3000/reports/1/report_food_items/new %>
 
+
+<div class="food_page">
   <h2>Add <%= @report.meal_type %></h2>
+
+  <div class="addrecipe-report">
+  <h3>Recipes</h3>
+    <ul>
+    <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, report_add_recipe_path(@report, recipe), data: {turbo_method: :post} %></li>
+    <% end %>
+    </ul>
+  </div>
     <div class="add-fooditem">
+      <h3>Ingredients</h3>
       <%= simple_form_for [@report, @report_food_item] do |f| %>
       <%= f.association :food_item, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, inline_label: 'Choose', label: false %>
 
-      <div class="recent-fooditem">
-          <h3>Recents</h3>
-            <div class="recent-fooditem-name">
-              <div class="square">
-                <%= f.input :food_item, as: :check_boxes, collection: @recent_report_food_item, legend_tag: false, label_method: lambda { |food| food.food_item.name }, class:"recent-fooditem-food" %>
+        <div class="recent-fooditem">
+            <h3>Recents</h3>
+              <div class="recent-fooditem-name">
+                <div class="square">
+                  <%= f.input :food_item_id, as: :check_boxes, collection: @recent_food_items, legend_tag: false, label_method: lambda { |food| food.name }, class:"recent-fooditem-food" %>
+                </div>
               </div>
-            </div>
         </div>
+
+
         <%= f.button :submit, "Add", class:"btn-submit-report"   %>
         <% end %>
     </div>
+</div>

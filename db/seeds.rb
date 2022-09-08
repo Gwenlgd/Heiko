@@ -54,33 +54,33 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{row['ingredients']} #{row['id']}"
 end
 
+
 # FoodItem.intolerance
 
 
+# FoodItem.limit(3).each do |food_item|
+#   result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving #{food_item.name}&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
+#   result = JSON.parse(result.body)
+#   nutrients = result[0]["nutrition"]["nutrients"]
+#   list = ["Carbohydrates", "Fat", "Protein", "Fiber", "Sugar"].map do |nutrient|
+#     info = nutrients.find { |n| n["name"] == nutrient }
 
-FoodItem.limit(3).each do |food_item|
-  result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving #{food_item.name}&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
-  result = JSON.parse(result.body)
-  nutrients = result[0]["nutrition"]["nutrients"]
-  list = ["Carbohydrates", "Fat", "Protein", "Fiber", "Sugar"].map do |nutrient|
-    info = nutrients.find { |n| n["name"] == nutrient }
+#     next unless info
 
-    next unless info
+#     {
+#       info["name"] => info["amount"] * 100
+#     }
+#   end
 
-    {
-      info["name"] => info["amount"] * 100
-    }
-  end
+#   p food_item.name
+#   pp nutrients
 
-  p food_item.name
-  pp nutrients
-
-  food_item.update(nutrients: list)
-# Fat
-# Protein
-# Fiber
-# Sugar
-end
+#   food_item.update(nutrients: list)
+# # Fat
+# # Protein
+# # Fiber
+# # Sugar
+# end
 
 # RECIPES
 

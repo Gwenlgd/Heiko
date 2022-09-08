@@ -1,34 +1,35 @@
 
 <div class="week-view-report">
-  <h3>Week 36</h3>
+ <h3><%= Date.today.beginning_of_week.strftime("#{Date.today.beginning_of_week.day.ordinalize} %B") %> - <%= Date.today.end_of_week.strftime("#{Date.today.end_of_week.day.ordinalize} %B") %></h3>
+
 
 
   <div class="best-bad-day">
     <div class="best-day">
       <p>Best Day</p>
-      <a href="">Thurs</a>
+      <a> <%= @best_day.nil? ? '-' : @best_day.date.strftime("%a") %> </a>
     </div>
 
     <div class="bad-day">
-      <p>Bad Day</p>
-      <a href="">Mon</a>
+      <p>Worst Day</p>
+       <a> <%= @worst_day.nil? ? '-' : @worst_day.date.strftime("%a") %> </a>
     </div>
   </div>
 
   <div class="month-food-report">
     <div class="food-to-avoid">
       <h2>Food to avoid</h2>
-      </p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <% @bad_foods.each do |food| %>
+        </p><%= food.name %></p>
+
+      <% end %>
     </div>
     <div class="food-to-avoid">
       <h2>Happy food</h2>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <% @good_foods.each do |food| %>
+        </p><%= food.name %></p>
+
+      <% end %>
     </div>
   </div>
 
@@ -39,10 +40,9 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Most symptoms</h2>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
+              <% @popular_feelings.each do |key, value| %>
+                </p><%= key %> happens <%= value %> times</p>
+                  <% end %>
             </div>
           </div>
       </div>

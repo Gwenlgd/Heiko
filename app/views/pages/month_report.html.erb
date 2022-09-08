@@ -3,12 +3,12 @@
   <div class="best-bad-day">
     <div class="best-day">
       <p>Best Day</p>
-      <a> <%= @best_day.date.strftime("#{@best_day.date.day.ordinalize}") %> </a>
+      <a> <%= @best_day.nil? ? '-' : @best_day.date.strftime("#{@best_day.date.day.ordinalize}") %> </a>
     </div>
 
     <div class="bad-day">
       <p>Worst Day</p>
-       <a> <%= @worst_day.date.strftime("#{@worst_day.date.day.ordinalize}") %> </a>
+       <a> <%= @worst_day.nil? ? '-' : @worst_day.date.strftime("#{@worst_day.date.day.ordinalize}") %> </a>
     </div>
   </div>
 
@@ -36,10 +36,9 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Most symptoms</h2>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
+              <% @popular_feelings.each do |key, value| %>
+                </p><%= key %> happens <%= value %> times</p>
+                  <% end %>
             </div>
           </div>
       </div>

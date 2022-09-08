@@ -50,7 +50,18 @@ class PagesController < ApplicationController
         report.moods.pluck(:name).include?(grouped_moods["Good"][1])
       )
       end.first
+
     @worst_day = @sorted_day.last
+
+    @feeling_count = ReportFeeling
+    .joins(:report, :feeling)
+    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_week, Date.today.end_of_week, current_user.id)
+    .group('feelings.name')
+    .count
+
+    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(3).to_h
+
+
   end
 
   def month_report
@@ -87,6 +98,14 @@ class PagesController < ApplicationController
         )
         end.first
       @worst_day = @sorted_day.last
+
+    @feeling_count = ReportFeeling
+    .joins(:report, :feeling)
+    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_month, Date.today.end_of_month, current_user.id)
+    .group('feelings.name')
+    .count
+
+    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(3).to_h
 
   end
 

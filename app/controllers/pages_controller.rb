@@ -17,25 +17,25 @@ class PagesController < ApplicationController
     @food_items = FoodItem.where.not(nutrients: nil)
   end
 
-  def week_report
-    @food_consumed = ReportMood
-                    .joins(:report)
-                    .where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15)
-                    .group(:mood_id)
-                    .count
+  #def week_report
+    #@food_consumed = ReportMood
+                    #.joins(:report)
+                    #.where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15)
+                    #.group(:mood_id)
+                    #.count
 
     # Filter just the mood that occurs more than equal to 2 times a week
-    @mood_count_often = @mood_count.select { |key, value| value >= 2 }
+    # @mood_count_often = @mood_count.select { |key, value| value >= 2 }
 
     # Find the report related to this mood and the food they consume on those days
-    @food_consumed = Report
-                      .where(id: ReportMood.where(mood_id: @mood_count_often.keys).pluck(:report_id))
-                      .joins(:report_food_items)
-                      .group(:food_item_id)
-                      .count
+    # @food_consumed = Report
+                      # .where(id: ReportMood.where(mood_id: @mood_count_often.keys).pluck(:report_id))
+                      # .joins(:report_food_items)
+                      # .group(:food_item_id)
+                      #.count
 
     # top food consumed most when the mood occurs
-    @top_food_consumed = @food_consumed.sort_by { |key, value| -value }.to_h
+    #@top_food_consumed = @food_consumed.sort_by { |key, value| -value }.to_h
 
     # link food item and intolerances in common
     # @food_consumed.each do |key, value|
@@ -59,7 +59,7 @@ class PagesController < ApplicationController
     # result = ReportFoodItem.joins(:report).where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15).joins('INNER JOIN report_moods AS rm ON rm.report_id = repo
     #   rts.id').select('report_food_items.food_item_id, reports.id, rm.mood_id')
   end
-end
+#end
 # result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving Apple&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
 # Carbs
 # Fat

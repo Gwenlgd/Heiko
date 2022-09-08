@@ -21,9 +21,7 @@
 <div class="profile-settings">
 
   <button class="btn btn-link">
-    <%= link_to new_user_session_path do %>
     <p>Language</p>
-    <% end %>
   </button>
 
   <button class="btn btn-link" >
@@ -33,22 +31,21 @@
 
 
   <button  class="btn btn-link" >
-    <%= link_to new_user_session_path do %>
     <p>Notification</p>
-
-    <% end %>
   </button>
 
-    <button class="btn btn-link">
-    <%= link_to new_user_session_path do %>
-    <p>Privacy</p>
-    <% end %>
-  </button>
   </div>
 <br>
 
 <div class="profile-settings">
 <div class="dark-mode-button">
+  <input type="checkbox" id="darkmode-toggle" onclick="myFunction()"/>
+  <label for="darkmode-toggle">
+</div>
+</div>
+
+<div class="profile-settings">
+<div class="not-mode-button">
   <input type="checkbox" id="darkmode-toggle" onclick="myFunction()"/>
   <label for="darkmode-toggle">
 </div>

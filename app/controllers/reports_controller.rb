@@ -14,6 +14,16 @@ class ReportsController < ApplicationController
     @report_food_items = @report.report_food_items.group_by {|report_food_item| report_food_item.meal_type}
   end
 
+  def add_recipe
+    @report = Report.find(params[:report_id])
+    @recipe = Recipe.find(params[:id])
+    @food_items = @recipe.food_items
+    @food_items.each do |food_item|
+    @new_report_food_item = ReportFoodItem.new(report_id: @report.id, food_item: food_item, meal_type: @report.meal_type)
+      @new_report_food_item.save
+    end
+    redirect_to report_path(@report)
+  end
 
   def create
     if params[:date]

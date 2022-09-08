@@ -1,5 +1,15 @@
+.food_page {
+  h2 {
+    margin-left: -5px;
+  }
+}
+
 .add-fooditem{
   margin: 20px;
+
+  h3{
+    margin: 30px 0px 20px 0px;
+  }
 }
 
 .form-select {
@@ -7,7 +17,7 @@
 }
 
 .btn-submit-report {
-  margin-top: 5px;
+  margin-top: 20px;
   position: relative;
   width: 100px;
   height: 40px;
@@ -30,11 +40,12 @@
 }
 
 .recent-fooditem {
+  margin-bottom: 20px;
 
-  h3{
-    font-size: 26px;
-    margin-top: 30px;
-  }
+    h3 {
+      // font-size: 26px;
+      margin: 30px 0px 20px 0px;
+    }
 }
 
 .form-check {

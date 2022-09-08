@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     resources :report_food_items
     resources :report_moods
     resources :report_feelings
+
+    post '/recipes/:id', to: 'reports#add_recipe', as: :add_recipe
   end
 
 

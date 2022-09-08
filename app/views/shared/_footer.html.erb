@@ -12,16 +12,20 @@
   <div class="dropup">
      <button class="dropbtn"><%= inline_svg_tag "positive.svg", class: "footer-icon-plus" %></button>
      <p>Add</p>
+     <% if action_name == "show" && controller_name == "reports" %>
+      <% active_report = Report.find(params[:id]) %>
+      <% date = active_report.date.strftime("%F") %>
+    <% end %>
     <div class="dropup-content">
       <div class="inner-dropup">
         <div class="inner-feelings">
           <button class="btn btn-primary">
-            <%= link_to reports_path(category: "Moods"), data: {turbo_method: :post} do %>
+            <%= link_to reports_path(category: "Moods", date: date), data: {turbo_method: :post} do %>
               <p>Mood</p>
             <% end %>
           </button>
           <button class="btn btn-primary">
-            <%= link_to reports_path(category: "Feelings"), data: {turbo_method: :post} do %>
+            <%= link_to reports_path(category: "Feelings", date: date), data: {turbo_method: :post} do %>
               <p>Symptoms</p>
             <% end %>
           </button>
@@ -29,25 +33,25 @@
         <div class="inner-inner-food">
           <div class="inner-food">
             <button class="btn btn-primary">
-              <%= link_to reports_path(category: "Breakfast"), data: {turbo_method: :post} do %>
+              <%= link_to reports_path(category: "Breakfast", date: date), data: {turbo_method: :post} do %>
                 <p>Breakfast</p>
               <% end %>
             </button>
 
             <button class="btn btn-primary">
-              <%= link_to reports_path(category: "Lunch"), data: {turbo_method: :post} do %>
+              <%= link_to reports_path(category: "Lunch", date: date), data: {turbo_method: :post} do %>
                 <p>Lunch</p>
               <% end %>
             </button>
           </div>
           <div class="inner-food">
             <button class="btn btn-primary">
-              <%= link_to reports_path(category: "Dinner"), data: {turbo_method: :post} do %>
+              <%= link_to reports_path(category: "Dinner", date: date), data: {turbo_method: :post} do %>
                 <p>Dinner</p>
               <% end %>
             </button>
             <button class="btn btn-primary">
-              <%= link_to reports_path(category: "Snacks"), data: {turbo_method: :post} do %>
+              <%= link_to reports_path(category: "Snacks", date: date), data: {turbo_method: :post} do %>
                 <p>Snacks</p>
               <% end %>
             </button>
@@ -55,7 +59,7 @@
           </div>
           <div class="water">
             <button class="btn btn-primary">
-              <%= link_to reports_path(category: "Drinks"), data: {turbo_method: :post} do %>
+              <%= link_to reports_path(category: "Drinks", date: date), data: {turbo_method: :post} do %>
                 <p>Drinks</p>
               <% end %>
             </button>

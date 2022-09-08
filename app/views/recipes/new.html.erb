@@ -1,10 +1,12 @@
 <%# PATH new_recipe %>
 
+<div class="new-rep-container">
+
 <div class="add-recipe">
   <div class="add-recipe-form">
     <%= simple_form_for @recipe do |f| %>
       <div class="meal-type-recipe">
-        <h3><%= f.input :meal_type, collection: ["Breakfast", "Lunch", "Dinner", "Snacks"] %></h3>
+        <h3><%= f.input :meal_type, collection: [ "Breakfast", "Lunch", "Dinner", "Snacks"] %></h3>
       </div>
 
       <div class="name-recipe">
@@ -23,7 +25,7 @@
         </div>
       </div>
     <% end %>
-
     </div>
   </div>
+</div>
 </div>

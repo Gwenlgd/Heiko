@@ -121,22 +121,23 @@ body {
   display: flex-start;
   margin-bottom: 20px;
   min-height: 100px;
+  margin-top: 15px;
 
   .square {
     position: relative;
-
-    background-color: $offwhite;
+    background-color: #BEDAD2;
     border-radius: 5px;
-    border-color: $offwhite;
-    color: $black;
+    border-color: #BEDAD2;
+    color: black;
+    opacity: 0.8;
     box-shadow: none;
-    padding: 5px;
+    padding: 2px;
     padding-right: 20px;
     text-transform: capitalize;
   }
 
   h3 {
-    margin: 10px 0px;
+    margin: 14px 0px;
   }
 
   form {

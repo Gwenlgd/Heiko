@@ -39,6 +39,10 @@
   color: $black;
 }
 
+
+// RECENTS FOOD ITEMS TAGS
+
+
 .recent-fooditem {
   margin-bottom: 20px;
 
@@ -73,6 +77,7 @@
 // .tag-selector + label
 
 .form-check-input + label {
+  background-color: $offwhite;
   cursor: pointer;
   border-radius: 5px;
   color: #1B1E1D;

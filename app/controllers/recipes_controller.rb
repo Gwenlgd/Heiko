@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :destroy]
+  before_action :set_recipe, only: [:show, :destroy, :edit]
 
 
   def index
@@ -61,6 +61,9 @@ class RecipesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
   end
 
   def destroy

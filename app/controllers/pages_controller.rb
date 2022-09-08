@@ -10,12 +10,12 @@ class PagesController < ApplicationController
   def calendar
   end
 
- # def jules_api
+  def jules_api
     # url = "https://api.spoonacular.com/recipes/641166/nutritionLabel&apiKey=567252aada1e4f7b9480f8d21d58c7fd"
     # user_serialized = URI.open(url).read
     # @data = JSON.parse(user_serialized)
-   # @food_items = FoodItem.where.not(nutrients: nil)
-  #end
+    @food_items = FoodItem.where.not(nutrients: nil)
+  end
 
   def week_report
 

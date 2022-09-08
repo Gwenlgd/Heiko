@@ -12,7 +12,6 @@
   }
 }
 
-
 .week-view-report {
   font-size: 20px;
   font-weight: 400;
@@ -108,6 +107,10 @@
   border: solid #BEDAD2;
   width: 150px;
   height: 230px;
+
+  #text {
+    margin-left: 5px;
+  }
 
   h2 {
     text-align: left;

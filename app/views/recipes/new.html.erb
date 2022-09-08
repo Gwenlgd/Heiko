@@ -8,7 +8,6 @@
       <div class="add-fooditem-recipe">
         <%= f.association :recipe_food_items, collection: FoodItem.all, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}}, inline_label: 'Choose', label: false %>
       </div>
-
       <%= f.button :submit, "Add", class:"btn-submit-report-recipe" %>
   <% end %>
 </div>

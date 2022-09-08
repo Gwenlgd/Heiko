@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", food_item: food_items.first)
 require "open-uri"
 require "csv"
+require "json"
 
 
 puts "Cleaning database..."
@@ -54,7 +55,42 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{row['ingredients']} #{row['id']}"
 end
 
+FoodItem.intolerance 
+
+
+
+FoodItem.limit(3).each do |food_item|
+  result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving #{food_item.name}&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
+  result = JSON.parse(result.body)
+  nutrients = result[0]["nutrition"]["nutrients"]
+  list = ["Carbohydrates", "Fat", "Protein", "Fiber", "Sugar"].map do |nutrient|
+    info = nutrients.find { |n| n["name"] == nutrient }
+
+    next unless info
+
+    {
+      info["name"] => info["amount"] * 100
+    }
+  end
+
+  p food_item.name
+  pp nutrients
+
+  food_item.update(nutrients: list)
+# Fat
+# Protein
+# Fiber
+# Sugar
+end
+
 # RECIPES
+
+# jules test
+# puts "Creating recipes..."
+
+# carbonara = Recipe.create!(name: "Pasta Carbonara", user: User.first)
+# bolognese = Recipe.create!(name: "Pasta Bolognese", user: User.first)
+# quinoa = Recipe.create!(name: "Quinoa salad", user: User.first)
 
 
 # MOODS

@@ -6,29 +6,29 @@
   <div class="best-bad-day">
     <div class="best-day">
       <p>Best Day</p>
-      <a href="">Thurs</a>
+      <a> <%= @best_day.date.strftime("%a") %> </a>
     </div>
 
     <div class="bad-day">
-      <p>Bad Day</p>
-      <a href="">Mon</a>
+      <p>Worst Day</p>
+       <a> <%= @worst_day.date.strftime("%a") %> </a>
     </div>
   </div>
 
   <div class="month-food-report">
     <div class="food-to-avoid">
       <h2>Food to avoid</h2>
-      </p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <% @bad_foods.each do |food| %>
+        </p><%= food.name %></p>
+
+      <% end %>
     </div>
     <div class="food-to-avoid">
       <h2>Happy food</h2>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <% @good_foods.each do |food| %>
+        </p><%= food.name %></p>
+
+      <% end %>
     </div>
   </div>
 

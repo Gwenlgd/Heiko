@@ -54,7 +54,7 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{row['ingredients']} #{row['id']}"
 end
 
-FoodItem.intolerance
+# FoodItem.intolerance
 
 
 

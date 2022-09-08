@@ -19,11 +19,13 @@
 
   <div class="other-overview">
     <button class="btn btn-primary">
-      <%= link_to "Edit", recipes_path %>
+      <%= link_to "Edit", edit_recipe_path(@recipe) %>
     </button>
 
     <button class="btn btn-primary">
-      <%= link_to "Delete", recipes_path %>
+      <%= link_to recipe_path(@recipe), data: {turbo_method: :delete} do %>
+      <p>Delete</p>
+      <% end %>
     </button>
   </div>
   <div class="other-overview">

@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show]
+  before_action :set_recipe, only: [:show, :destroy]
+
 
   def index
     @recipes = current_user.recipes
@@ -60,6 +61,11 @@ class RecipesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to recipes_path, status: :see_other
   end
 
   private

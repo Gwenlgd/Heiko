@@ -38,23 +38,23 @@ class PagesController < ApplicationController
     @top_food_consumed = @food_consumed.sort_by { |key, value| -value }.to_h
 
     # link food item and intolerances in common
-    @food_consumed.each do |key, value|
-      @intolerance =
+    # @food_consumed.each do |key, value|
+      # @intolerance =
 
-      result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving #{food_item.name}&apiKey=407c4040afde4095884ae9acad7d8e23&includeNutrition=true", { }, { content_type: :json})
-      result = JSON.parse(result.body)
-      nutrients = result[0]["nutrition"]["nutrients"]
-      list = ["Carbohydrates", "Fat", "Protein", "Fiber", "Sugar"].map do |nutrient|
-        info = nutrients.find { |n| n["name"] == nutrient }
+      # result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving #{food_item.name}&apiKey=407c4040afde4095884ae9acad7d8e23&includeNutrition=true", { }, { content_type: :json})
+      # result = JSON.parse(result.body)
+      # nutrients = result[0]["nutrition"]["nutrients"]
+      # list = ["Carbohydrates", "Fat", "Protein", "Fiber", "Sugar"].map do |nutrient|
+        # info = nutrients.find { |n| n["name"] == nutrient }
 
-        next unless info
+        # next unless info
 
-        {
-          info["name"] => info["amount"] * 100
-        }
-      end
+        # {
+          # info["name"] => info["amount"] * 100
+        # }
+      # end
 
-    end
+    # end
 
     # result = ReportFoodItem.joins(:report).where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15).joins('INNER JOIN report_moods AS rm ON rm.report_id = repo
     #   rts.id').select('report_food_items.food_item_id, reports.id, rm.mood_id')

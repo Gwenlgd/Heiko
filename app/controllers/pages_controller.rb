@@ -1,68 +1,100 @@
 require "json"
 require "open-uri"
-
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :calendar ]
-
   def home
   end
-
   def calendar
   end
-
-  def jules_api
+  #def jules_api
     # url = "https://api.spoonacular.com/recipes/641166/nutritionLabel&apiKey=567252aada1e4f7b9480f8d21d58c7fd"
     # user_serialized = URI.open(url).read
     # @data = JSON.parse(user_serialized)
-    @food_items = FoodItem.where.not(nutrients: nil)
+    #@food_items = FoodItem.where.not(nutrients: nil)
+  #end
+  def week_report
+    @bad_foods = []
+    @good_foods = []
+    @days = []
+    (Date.today.beginning_of_week..Date.today.end_of_week).each do |date|
+      report = current_user.reports.find_by(date: date)
+      if report.present?
+        if report.report_feelings.length.positive?
+          @bad_foods << report.food_items
+        else
+          @good_foods << report.food_items
+        end
+        @days << report
+      end
+    end
+    grouped_moods = {
+    "Good" => ["Super happy", "Happy"],
+    "Bad" => ["Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"]
+    }
+    @bad_foods.flatten!
+    @good_foods.flatten!
+    @sorted_day = @days.compact.sort_by { |report| report.feelings.length }
+    @best_day = @sorted_day.select do |report|
+      report.feelings.length.zero? &&
+      !report.moods.pluck(:name).include?(grouped_moods["Bad"]) &&
+      (
+        report.moods.pluck(:name).include?(grouped_moods["Good"][0]) ||
+        report.moods.pluck(:name).include?(grouped_moods["Good"][1])
+      )
+      end.first
+
+    @worst_day = @sorted_day.last
+
+    @feeling_count = ReportFeeling
+    .joins(:report, :feeling)
+    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_week, Date.today.end_of_week, current_user.id)
+    .group('feelings.name')
+    .count
+
+    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(3).to_h
+
+
   end
 
-  #def week_report
-    #@food_consumed = ReportMood
-                    #.joins(:report)
-                    #.where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15)
-                    #.group(:mood_id)
-                    #.count
+  def month_report
+    @bad_foods = []
+    @good_foods = []
+    @days = []
+    (Date.today.beginning_of_month..Date.today.end_of_month).each do |date|
+      report = current_user.reports.find_by(date: date)
+      if report.present?
+        if report.report_feelings.length.positive?
+          @bad_foods << report.food_items
+        else
+          @good_foods << report.food_items
+        end
+        @days << report
+      end
+    end
+    @bad_foods.flatten!
+    @good_foods.flatten!
+    grouped_moods = {"Good" => ["Super happy", "Happy"],
+      "Bad" => ["Sad", "Anxious", "Stressed", "Angry", "Grumpy", "Annoyed"]
+      }
+      @sorted_day = @days.compact.sort_by { |report| report.feelings.length }
+      @best_day = @sorted_day.select do |report|
+        report.feelings.length.zero? &&
+        !report.moods.pluck(:name).include?(grouped_moods["Bad"]) &&
+        (
+          report.moods.pluck(:name).include?(grouped_moods["Good"][0]) ||
+          report.moods.pluck(:name).include?(grouped_moods["Good"][1])
+        )
+        end.first
+      @worst_day = @sorted_day.last
 
-    # Filter just the mood that occurs more than equal to 2 times a week
-    # @mood_count_often = @mood_count.select { |key, value| value >= 2 }
+    @feeling_count = ReportFeeling
+    .joins(:report, :feeling)
+    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_month, Date.today.end_of_month, current_user.id)
+    .group('feelings.name')
+    .count
 
-    # Find the report related to this mood and the food they consume on those days
-    # @food_consumed = Report
-                      # .where(id: ReportMood.where(mood_id: @mood_count_often.keys).pluck(:report_id))
-                      # .joins(:report_food_items)
-                      # .group(:food_item_id)
-                      #.count
+    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(3).to_h
 
-    # top food consumed most when the mood occurs
-    #@top_food_consumed = @food_consumed.sort_by { |key, value| -value }.to_h
-
-    # link food item and intolerances in common
-    # @food_consumed.each do |key, value|
-      # @intolerance =
-
-      # result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving #{food_item.name}&apiKey=407c4040afde4095884ae9acad7d8e23&includeNutrition=true", { }, { content_type: :json})
-      # result = JSON.parse(result.body)
-      # nutrients = result[0]["nutrition"]["nutrients"]
-      # list = ["Carbohydrates", "Fat", "Protein", "Fiber", "Sugar"].map do |nutrient|
-        # info = nutrients.find { |n| n["name"] == nutrient }
-
-        # next unless info
-
-        # {
-          # info["name"] => info["amount"] * 100
-        # }
-      # end
-
-    # end
-
-    # result = ReportFoodItem.joins(:report).where('date >= ? AND date <= ? AND user_id = ?', Date.today() - 7.day, Date.today(), 15).joins('INNER JOIN report_moods AS rm ON rm.report_id = repo
-    #   rts.id').select('report_food_items.food_item_id, reports.id, rm.mood_id')
   end
-#end
-# result = RestClient.post("https://api.spoonacular.com/recipes/parseIngredients?ingredientList=1 serving Apple&apiKey=567252aada1e4f7b9480f8d21d58c7fd&includeNutrition=true", { }, { content_type: :json})
-# Carbs
-# Fat
-# Protein
-# Fiber
-# Sugar
+
+end

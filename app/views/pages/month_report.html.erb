@@ -1,93 +1,88 @@
 <div class="month-view-report">
-  <h3>September</h3>
-
-
+  <h3><%= Date.today.strftime("%B") %></h3>
   <div class="best-bad-day">
     <div class="best-day">
       <p>Best Day</p>
-      <a href="">18</a>
+      <a> <%= @best_day.nil? ? '-' : @best_day.date.strftime("#{@best_day.date.day.ordinalize}") %> </a>
     </div>
 
     <div class="bad-day">
-      <p>Bad Day</p>
-      <a href="">12</a>
+      <p>Worst Day</p>
+       <a> <%= @worst_day.nil? ? '-' : @worst_day.date.strftime("#{@worst_day.date.day.ordinalize}") %> </a>
     </div>
   </div>
 
   <div class="month-food-report">
     <div class="food-to-avoid">
       <h2>Food to avoid</h2>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <% @bad_foods.each do |food| %>
+        <p><%= food.name %></p>
+
+      <% end %>
     </div>
     <div class="food-to-avoid">
       <h2>Happy food</h2>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <% @good_foods.each do |food| %>
+        <p><%= food.name %></p>
+
+      <% end %>
     </div>
   </div>
 
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="month-suggest-report">
-          <div class="suggest">
-            <h2>Most symptoms</h2>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="month-suggest-report">
+            <div class="suggest">
+              <h2>Most symptoms</h2>
+              <% @popular_feelings.each do |key, value| %>
+                <p><%= key %> happens <%= value %> times</p>
+                  <% end %>
+            </div>
           </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <div class="month-suggest-report">
-          <div class="suggest">
-            <h2>Most moods</h2>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+      </div>
+      <div class="carousel-item">
+        <div class="month-suggest-report">
+            <div class="suggest">
+              <h2>Most moods</h2>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>
           </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <div class="month-suggest-report">
-          <div class="suggest">
-            <h2>Happy days</h2>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+      </div>
+      <div class="carousel-item">
+        <div class="month-suggest-report">
+            <div class="suggest">
+              <h2>Happy days</h2>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>
           </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <div class="month-suggest-report">
-          <div class="suggest">
-            <h2>Bad days</h2>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+      </div>
+      <div class="carousel-item">
+        <div class="month-suggest-report">
+            <div class="suggest">
+              <h2>Bad days</h2>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
 </div>

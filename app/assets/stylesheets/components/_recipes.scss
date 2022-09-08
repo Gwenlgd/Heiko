@@ -80,7 +80,18 @@
 
 
 // NEW PAGE RECIPE
+.addrecipe-report {
 
+  a {
+    text-decoration: none !important;
+    padding-left: 4px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+}
 .add-recipe {
   margin: 10px;
 

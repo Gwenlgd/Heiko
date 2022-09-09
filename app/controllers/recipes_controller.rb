@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = current_user.recipes
+    @recipes_type = ["Breakfast", "Lunch", "Dinner"]
 
     # if params[:meal_type] == "Breakfast"
     #   @recipe.meal_type = "Breakfast"

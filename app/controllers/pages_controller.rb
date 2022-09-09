@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     # @data = JSON.parse(user_serialized)
     #@food_items = FoodItem.where.not(nutrients: nil)
   #end
-  
+
   def week_report
     @bad_foods = []
     @good_foods = []
@@ -52,7 +52,15 @@ class PagesController < ApplicationController
     .group('feelings.name')
     .count
 
-    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(3).to_h
+    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(5).to_h
+
+    @mood_count = ReportMood
+    .joins(:report, :mood)
+    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_week, Date.today.end_of_week, current_user.id)
+    .group('moods.name')
+    .count
+
+    @popular_moods = @mood_count.sort_by { |key, value| value }.reverse.first(5).to_h
 
 
   end
@@ -94,7 +102,15 @@ class PagesController < ApplicationController
     .group('feelings.name')
     .count
 
-    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(3).to_h
+    @popular_feelings = @feeling_count.sort_by { |key, value| value }.reverse.first(5).to_h
+
+    @mood_count = ReportMood
+    .joins(:report, :mood)
+    .where('date BETWEEN ? AND ? AND user_id = ?', Date.today.beginning_of_month, Date.today.end_of_month, current_user.id)
+    .group('moods.name')
+    .count
+
+    @popular_moods = @mood_count.sort_by { |key, value| value }.reverse.first(5).to_h
 
   end
 

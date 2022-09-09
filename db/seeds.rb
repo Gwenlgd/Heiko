@@ -27,7 +27,7 @@ puts "Creating users..."
 # USERS
 
 # women
-gaby = User.create!(first_name: "Gaby", last_name: "vDB", email: "gvdb@test.com", password: "paradise", age: 29, gender: "Women")
+gaby = User.create!(first_name: "Gaby", last_name: "van den Born", email: "gvdb@lewagon.com", password: "paradise", age: 29, gender: "Women")
 juliette = User.create!(first_name: "Juliette", last_name: "B.", email: "juliette@test.com", password: "paradise", age: 29, gender: "Women")
 gwen = User.create!(first_name: "Gwen", last_name: "L.", email: "gwenl@test.com", password: "paradise", age: 29, gender: "Women")
 april = User.create!(first_name: "April", last_name: "D.", email: "aprild@test.com", password: "paradise", age: 29, gender: "Women")

@@ -11,16 +11,21 @@
   </div>
   <div class="category-recipe">
 
-    <% @recipes.each do | recipe | %>
-  <div class="category-recipe">
-      <div class="card-recipe-name">
-        <%= link_to recipe_path(recipe) do %>
-        <h3><%= recipe.name %></h3>
-        <% end %>
-    </div>
-  </div>
-<% end %>
 
+  <% @recipes_type.each do |type| %>
+    <h2 class="text-start"><%= type %></h2>
+    <div class="category-meal">
+      <% @recipes.where(meal_type: type).each do | recipe | %>
+        <div class="category-recipe">
+            <div class="card-recipe-name">
+              <%= link_to recipe_path(recipe) do %>
+              <h3><%= recipe.name %></h3>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
 
       <%# <p><%= recipe.meal_type %-></p> %>

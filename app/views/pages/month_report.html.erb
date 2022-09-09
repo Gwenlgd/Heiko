@@ -46,6 +46,9 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Most moods</h2>
+              <% @popular_moods.each do |key, value| %>
+                <p><%= key %> happens <%= value %> times</p>
+                  <% end %>
             </div>
           </div>
       </div>

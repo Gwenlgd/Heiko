@@ -28,8 +28,6 @@
       <% end %>
     </div>
   </div>
-
-
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -37,7 +35,7 @@
             <div class="suggest">
               <h2>Most symptoms</h2>
               <% @popular_feelings.each do |key, value| %>
-                <p><%= key %> happens <%= value %> times</p>
+                <p><%= value %> x <%= key %></p>
                   <% end %>
             </div>
           </div>
@@ -53,12 +51,20 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Happy days</h2>
-              <p>2 august - 1 Symptom</p>
-              <p>3 august - 0 Symptoms </p>
-              <p>9 august - 0 Symptoms</p>
-              <p>18 august - 1 Symptom</p>
-              <p>23 august - 0 Symptoms</p>
-              <p>31 august - 1 Symptom </p>
+              <div class="best-bad-day">
+                <div class="best-day">
+                  <a> 1th </a>
+                </div>
+                <div class="best-day">
+                  <a> 4th </a>
+                </div>
+                <div class="best-day">
+                  <a> 5th </a>
+                </div>
+                <div class="best-day">
+                  <a> 8th </a>
+                </div>
+              </div>
             </div>
           </div>
       </div>
@@ -66,10 +72,14 @@
         <div class="month-suggest-report">
             <div class="suggest">
               <h2>Bad days</h2>
-              <p>4 august - 4 Symptoms</p>
-              <p>16 august - 3 Symptoms </p>
-              <p>21 august - 3 Symptoms</p>
-              <p>16 august - 5 Symptoms</p>
+              <div class="best-bad-day">
+                <div class="bad-day">
+                  <a> 6th </a>
+                </div>
+                <div class="bad-day">
+                  <a> 7th </a>
+                </div>
+              </div>
             </div>
           </div>
       </div>

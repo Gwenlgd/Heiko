@@ -125,7 +125,7 @@
     font-size: 17px;
     margin: 0px;
     position: relative;
-    top: 40px;
+    top: 45px;
     text-transform: capitalize;
   }
 
@@ -183,11 +183,45 @@
     font-size: 17px;
     margin: 0px;
     position: relative;
-    top: 40px;
+    top: 45px;
 
   }
 
+  .bad-day {
+    height: 60px;
+    width: 60px;
+    margin-top: 39px;
+    background-color: #bedad2a8;
+
+    a {
+      font-size: 17px;
+      margin-top: 17px;
+      opacity: 0.8;
+    }
+  }
+
+  .best-day {
+  height: 60px;
+  width: 60px;
+  margin-top: 39px;
+  background-color: #bedad2a8;
+
+  a {
+    font-size: 17px;
+    margin-top: 17px;
+    opacity: 0.8;
+
+  }
+
+  }
+
+  .best-bad-day {
+    justify-content: center;
 }
+
+
+}
+
 
 // NOT THE SAME, ONE FOR WEEK AND ONE FOR MONT
 .month-view-report .carousel-control-next-icon {
